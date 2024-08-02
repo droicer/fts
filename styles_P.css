@@ -4,7 +4,7 @@ body {
 }
 @font-face {
   font-family: Geometos_ExtraBold;
-  src: local("Geometos_ExtraBold"), url("/Geometos.ttf");
+  src: local("Geometos_ExtraBold"), url("Geometos.ttf");
 }
 .navbar {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
