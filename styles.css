@@ -1,179 +1,65 @@
 body {
-  background-color: #f8f9fa;
-  font-family: Geometos_ExtraBold;
+    background-image: url('/Background.jpg');
+    background-size: cover;
+    background-color: #2a2a2a;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Geometos_ExtraBold;
 }
+
+
 @font-face {
-  font-family: Geometos_ExtraBold;
-  src: local("Geometos_ExtraBold"), url("Geometos.ttf");
+    font-family: Geometos_ExtraBold;
+    src: local("Geometos_ExtraBold"), url("/Geometos.ttf");
 }
 
-.navbar {
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+.hexagonal-menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    width: 1000px;
 }
 
-.card {
-  border-radius: 10px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+.hex {
+    width: 200px;
+    height: 200px;
+    margin: 0px;
+    position: relative;
+    clip-path: polygon(25% 6.7%, 75% 6.7%, 100% 50%, 75% 93.3%, 25% 93.3%, 0% 50%);
+    background-color: #3333339c;
+    transition: background-color 0.3s;
 }
 
-.card-header {
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
+.hex a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    text-decoration: none;
+    color: #fff;
 }
 
-input[type="text"],
-input[type="file"],
-select {
-  border-radius: 5px;
+.hex:hover {
+    background-color: #ffcc00;
 }
 
-input[type="text"]:disabled,
-input[type="file"]:disabled,
-select:disabled {
-  background-color: #e9ecef;
-  opacity: 1;
+.hex .icon {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2rem;
 }
 
-
-.player-card {
-  border: none;
-  border-radius: 20px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-}
-
-.player-card .card-header {
-  background-color: #e53935;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-  padding: 15px 20px;
-}
-
-.player-card .rating {
-  font-size: 24px;
-  font-weight: bold;
-}
-
-.stat-item {
-  margin-bottom: 20px;
-  text-align: center;
-}
-
-.stat-icon {
-  display: block;
-  font-size: 24px;
-  color: #fac000;
-  margin-bottom: 5px;
-}
-
-.stat-item label {
-  font-size: 12px;
-  font-weight: bold;
-  margin-bottom: 5px;
-}
-
-.stat-item input {
-  font-size: 16px;
-  font-weight: bold;
-  color: #0c0000;
-  border: 2px solid #000000;
-  /* Añadimos un borde de color rojizo */
-  border-radius: 5px;
-  /* Añadimos un radio de borde */
-  padding: 5px 10px;
-  /* Añadimos un padding interno */
-  background-color: transparent;
-  text-align: center;
-  box-shadow: none;
-}
-
-.stat-item input:focus {
-  outline: none;
-  box-shadow: 0 0 5px rgba(229, 57, 53, 0.5);
-  /* Añadimos una sombra al enfocar */
-}
-
-.script-container {
-  display: flex;
-  justify-content: center;
-  align-items: left;
-  height: 20vh;
-  background-color: #f5f5f5;
-}
-
-.script-wrapper {
-  background-color: #ffffff;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.script-container-anu {
-  max-width: 100%;
-  overflow: hidden;
-  position: relative;
-  padding-bottom: 12.82%;
-  /* Aspect ratio 468:60 */
-  height: 0;
-}
-
-.script-wrapper_anu {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-
-
-.modal {
-  display: none;
-  /* Initially hidden */
-  position: fixed;
-  /* Stay in place */
-  z-index: 1;
-  /* Sit on top */
-  left: 0;
-  top: 0;
-  width: 100%;
-  /* Full width */
-  height: 100%;
-  /* Full height */
-  overflow: auto;
-  /* Enable scrolling if needed */
-  background-color: rgba(0, 0, 0, 0.4);
-  /* Transparent black background */
-}
-
-.modal-content {
-  background-color: #fefefe;
-  /* White content */
-  margin: 15% auto;
-  /* 15% from the top and centered */
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%;
-  /* Responsive width */
-  text-align: center;
-  /* Center content horizontally */
-}
-
-/* Close button styles */
-.close {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-/* Countdown styles */
-#countdown {
-  font-size: 20px;
-  margin-top: 20px;
+.hex .text {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1rem;
 }

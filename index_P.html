@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Players FTS</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    integrity="sha512-..." crossorigin="anonymous" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pako/2.0.3/pako.min.js"></script>
+
+  <script src="/script_fts_P.js"></script>
+  <link rel="stylesheet" href="/styles_P.css">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container">
+      <a class="navbar-brand" href="#">Players FTS</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="https://www.youtube.com/@Droicer" target="_blank">
+              <img src="https://yt3.googleusercontent.com/eE8WiTr40NsDdXT6GyOwEq1eUtqIir9S8Jx2GuMW-k6aOZ29RR1apYwMut8AqiduexTE_U3S=s176-c-k-c0x00ffffff-no-rj" alt="Logo" style="height: 30px; margin-right: 10px;"> <!-- Ajusta la ruta y el tamaño de acuerdo a tu logo -->
+              Droicer
+            </a>
+          </li>          
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="script-container">
+    <div class="script-wrapper">
+      <script type="text/javascript">
+        atOptions = {
+          'key': '2abf984a66f4f1a82de3c599331bbc5a',
+          'format': 'iframe',
+          'height': 60,
+          'width': 468,
+          'params': {}
+        };
+        document.write('<scr' + 'ipt type="text/javascript" src="//www.topcreativeformat.com/2abf984a66f4f1a82de3c599331bbc5a/invoke.js"></scr' + 'ipt>');
+      </script>
+    </div>
+  </div>
+
+
+  <div class="container my-4">
+    <div class="card">
+      <div class="card-header bg-primary text-white">
+        <h5 class="mb-0">Archivos</h5>
+      </div>
+      <div class="card-body">
+        <div class="mb-3">
+          <input type="file" id="fileInput" accept=".dat" class="form-control">
+        </div>
+        <div class="d-flex justify-content-center">
+          <button class="btn btn-primary me-2" onclick="descomprimirArchivo()">Cargar datos</button>
+          <button class="btn btn-primary" onclick="iniciarAnuncio()">Descargar</button>
+        </div>
+        <div id="compressedData" class="mt-4"></div>
+        <div id="decompressedData" class="mt-4"></div>
+      </div>
+    </div>
+  </div>
+  
+  <div id="modal-example" class="modal" style="display: none;">
+    <div class="modal-content">
+      <span class="close" onclick="cerrarModal()">&times;</span>
+      <div class="advertisement">
+        <script type="text/javascript">
+          atOptions = {
+            'key' : 'cbd9ef30449d8227da9037afae90d670',
+            'format' : 'iframe',
+            'height' : 250,
+            'width' : 300,
+            'params' : {}
+          };
+          document.write('<scr' + 'ipt type="text/javascript" src="//www.topcreativeformat.com/cbd9ef30449d8227da9037afae90d670/invoke.js"></scr' + 'ipt>');
+        </script>
+      </div>
+      <div id="countdown">El archivo se descargará en <span id="counter">10</span> segundos...</div>
+    </div>
+  </div>
+  
+  <script>
+    var modal = document.getElementById("modal-example");
+    var counter = 20;
+    var interval;
+  
+    function iniciarAnuncio() {
+      modal.style.display = "block";
+      interval = setInterval(actualizarContador, 1000);
+    }
+  
+    function actualizarContador() {
+      counter--;
+      document.getElementById("counter").innerText = counter;
+      if (counter <= 0) {
+        clearInterval(interval);
+        descargar();
+      }
+    }
+  
+    function cerrarModal() {
+      modal.style.display = "none";
+      clearInterval(interval);
+      counter = 20; // Reiniciar el contador
+      document.getElementById("counter").innerText = counter;
+    }
+  
+   
+  </script>
+  
+
+
+
+  <div class="script-container">
+    <div class="script-wrapper">
+      <script type="text/javascript">
+        atOptions = {
+          'key': '2abf984a66f4f1a82de3c599331bbc5a',
+          'format': 'iframe',
+          'height': 60,
+          'width': 468,
+          'params': {}
+        };
+        document.write('<scr' + 'ipt type="text/javascript" src="//www.topcreativeformat.com/2abf984a66f4f1a82de3c599331bbc5a/invoke.js"></scr' + 'ipt>');
+      </script>
+    </div>
+  </div>
+
+  <div class="container my-4">
+    <div class="card">
+      <div class="card-header bg-primary text-white">
+        <h5 class="mb-0">Búsqueda e información</h5>
+      </div>
+      <div class="card-body">
+        <div class="row mb-3">
+          <div class="col-md-8">
+            <input type="text" id="searchInput" class="form-control" placeholder="Buscar jugador...">
+          </div>
+          <div class="col-md-4 d-flex">
+            <button class="btn btn-primary me-2" onclick="buscarJugador()">Buscar</button>
+            <button class="btn btn-secondary" onclick="buscarSiguiente()">Buscar siguiente</button>
+          </div>
+        </div>
+        <div class="row mb-3">
+          <div class="col-md-4">
+            <input type="text" id="textBox_vercion" class="form-control" placeholder="Verción" disabled>
+          </div>
+          <div class="col-md-4">
+            <input type="text" id="textBox_total" class="form-control" placeholder="Total Players" disabled>
+          </div>
+          <div class="col-md-4">
+            <select id="playerbox" class="form-select"></select>
+          </div>
+        </div>
+        <div class="row mb-3">
+          <div class="col-md-4">
+            <label for="textBox_nombre" class="form-label">Nombre:</label>
+            <input type="text" id="textBox_nombre" class="form-control" placeholder="Nombre">
+          </div>
+          <div class="col-md-4">
+            <label for="textBox_nombre" class="form-label">Ocultar en transferencias:</label>
+            <select id="Ocultar" class="form-select">
+              <option value="no">no</option>
+              <option value="si">si</option>
+            </select>
+            <!-- <label for="textBox_apellido" class="form-label">Apellido:</label> -->
+            <!-- <input type="text" id="textBox_apellido" class="form-control" placeholder="Apellido" disabled> -->
+          </div>
+          <div class="col-md-4">
+            <!-- <label for="textBox_apodo" class="form-label">Apodo:</label> -->
+            <!-- <input type="text" id="textBox_apodo" class="form-control" placeholder="Apodo" disabled> -->
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="script-container">
+    <div class="script-wrapper">
+      <script type="text/javascript">
+        atOptions = {
+          'key': '2abf984a66f4f1a82de3c599331bbc5a',
+          'format': 'iframe',
+          'height': 60,
+          'width': 468,
+          'params': {}
+        };
+        document.write('<scr' + 'ipt type="text/javascript" src="//www.topcreativeformat.com/2abf984a66f4f1a82de3c599331bbc5a/invoke.js"></scr' + 'ipt>');
+      </script>
+    </div>
+  </div>
+
+  <div class="container my-4">
+    <div class="card player-card">
+      <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+        <h5 class="mb-0">Datos</h5>
+      </div>
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-4">
+            <label for="nacionalidad" class="form-label">Nacionalidad:</label>
+            <select id="nacionalidad" class="form-select">
+              <option value="españa">España</option>
+              <option value="italia">Italia</option>
+              <option value="alemania">Alemania</option>
+              <option value="holanda">Holanda</option>
+              <option value="croacia">Croacia</option>
+              <option value="brasil">Brasil</option>
+              <option value="argentina">Argentina</option>
+              <option value="rep-checa">Rep. Checa</option>
+              <option value="portugal">Portugal</option>
+              <option value="turquia">Turquía</option>
+              <option value="francia">Francia</option>
+              <option value="rusia">Rusia</option>
+              <option value="camerun">Camerún</option>
+              <option value="inglaterra">Inglaterra</option>
+              <option value="escocia">Escocia</option>
+              <option value="grecia">Grecia</option>
+              <option value="ghana">Ghana</option>
+              <option value="egipto">Egipto</option>
+              <option value="uruguay">Uruguay</option>
+              <option value="costa-marfil">Costa de Marfil</option>
+              <option value="mexico">México</option>
+              <option value="paraguay">Paraguay</option>
+              <option value="nigeria">Nigeria</option>
+              <option value="niger">Níger</option>
+              <option value="estados-unidos">Estados Unidos</option>
+              <option value="colombia">Colombia</option>
+              <option value="polonia">Polonia</option>
+              <option value="suecia">Suecia</option>
+              <option value="irlanda-norte">Irlanda del Norte</option>
+              <option value="japon">Japón</option>
+              <option value="marruecos">Marruecos</option>
+              <option value="irlanda">Irlanda</option>
+              <option value="australia">Australia</option>
+              <option value="chile">Chile</option>
+              <option value="tunez">Túnez</option>
+              <option value="senegal">Senegal</option>
+              <option value="iran">Irán</option>
+              <option value="arabia-saudita">Arabia Saudita</option>
+              <option value="corea-sur">Corea del Sur</option>
+              <option value="ecuador">Ecuador</option>
+              <option value="gales">Gales</option>
+              <option value="honduras">Honduras</option>
+              <option value="venezuela">Venezuela</option>
+              <option value="sudafrica">Sudáfrica</option>
+              <option value="costa-rica">Costa Rica</option>
+              <option value="trinidad-tobago">Trinidad y Tobago</option>
+              <option value="canada">Canadá</option>
+              <option value="china">China</option>
+              <option value="jamaica">Jamaica</option>
+              <option value="corea-norte">Corea del Norte</option>
+              <option value="barbados">Barbados</option>
+              <option value="india">India</option>
+              <option value="belgica">Bélgica</option>
+              <option value="suiza">Suiza</option>
+              <option value="dinamarca">Dinamarca</option>
+              <option value="bulgaria">Bulgaria</option>
+              <option value="togo">Togo</option>
+              <option value="noruega">Noruega</option>
+              <option value="eslovaquia">Eslovaquia</option>
+              <option value="israel">Israel</option>
+              <option value="ucrania">Ucrania</option>
+              <option value="peru">Perú</option>
+              <option value="mali">Malí</option>
+              <option value="rumania">Rumania</option>
+              <option value="guinea">Guinea</option>
+              <option value="serbia">Serbia</option>
+              <option value="montenegro">Montenegro</option>
+              <option value="bosnia">Bosnia</option>
+              <option value="islandia">Islandia</option>
+              <option value="argelia">Argelia</option>
+              <option value="hungria">Hungría</option>
+              <option value="albania">Albania</option>
+              <option value="zaire">Zaire (Congo)</option>
+              <option value="austria">Austria</option>
+              <option value="finlandia">Finlandia</option>
+              <option value="malta">Malta</option>
+              <option value="sierra-leona">Sierra Leona</option>
+              <option value="77">77</option>
+              <option value="78">78</option>
+              <option value="nueva-zelanda">Nueva Zelanda</option>
+              <option value="georgia">Georgia</option>
+              <option value="81">81</option>
+              <option value="macedonia">Macedonia</option>
+              <option value="letonia">Letonia</option>
+              <option value="yugoslavia">Yugoslavia</option>
+              <option value="oman">Omán</option>
+              <option value="eslovenia">Eslovenia</option>
+              <option value="87">87</option>
+              <option value="bielorrusia">Bielorrusia</option>
+              <option value="lituania">Lituania</option>
+              <option value="90">90</option>
+              <option value="cabo-verde">Cabo Verde</option>
+              <option value="92">92</option>
+              <option value="93">93</option>
+              <option value="gabon">Gabón</option>
+              <option value="burkina-faso">Burkina Faso</option>
+              <option value="guatemala">Guatemala</option>
+              <option value="97">97</option>
+              <option value="bolivia">Bolivia</option>
+              <option value="99">99</option>
+              <option value="100">100</option>
+              <option value="el-salvador">El Salvador</option>
+              <option value="haiti">Haití</option>
+              <option value="103">103</option>
+              <option value="san-cristobal-nieves">San Cristóbal y Nieves</option>
+              <option value="105">105</option>
+              <option value="armenia">Armenia</option>
+              <option value="estonia">Estonia</option>
+              <option value="108">108</option>
+              <option value="109">109</option>
+              <option value="chipre">Chipre</option>
+              <option value="moldavia">Moldavia</option>
+              <option value="112">112</option>
+              <option value="kosovo">Kosovo</option>
+              <option value="114">114</option>
+              <option value="bermudas">Bermudas</option>
+              <option value="116">116</option>
+              <option value="uzbekistan">Uzbekistán</option>
+              <option value="panama">Panamá</option>
+              <option value="kazajistan">Kazajistán</option>
+              <option value="san-marino">San Marino</option>
+              <option value="rd-del-congo">RD del Congo</option>
+              <option value="kuwait">Kuwait</option>
+              <option value="lichtenstein">Liechtenstein</option>
+              <option value="azerbaiyan">Azerbaiyán</option>
+              <option value="luxemburgo">Luxemburgo</option>
+              <option value="libia">Libia</option>
+              <option value="zambia">Zambia</option>
+              <option value="guyana">Guyana</option>
+              <option value="antigua-barbuda">Antigua y Barbuda</option>
+              <option value="irak">Irak</option>
+              <option value="jordania">Jordania</option>
+              <option value="qatar">Qatar</option>
+              <option value="barein">Baréin</option>
+              <option value="134">134</option>
+              <option value="135">135</option>
+              <option value="136">136</option>
+              <option value="137">137</option>
+              <option value="138">138</option>
+              <option value="139">139</option>
+              <option value="140">140</option>
+              <option value="141">141</option>
+              <option value="142">142</option>
+              <option value="143">143</option>
+              <option value="144">144</option>
+              <option value="145">145</option>
+              <option value="146">146</option>
+              <option value="147">147</option>
+              <option value="148">148</option>
+              <option value="149">149</option>
+              <option value="150">150</option>
+              <option value="151">151</option>
+              <option value="152">152</option>
+              <option value="153">153</option>
+              <option value="154">154</option>
+              <option value="155">155</option>
+              <option value="156">156</option>
+              <option value="157">157</option>
+              <option value="158">158</option>
+              <option value="159">159</option>
+              <option value="160">160</option>
+              <option value="161">161</option>
+              <option value="162">162</option>
+              <option value="163">163</option>
+              <option value="164">164</option>
+              <option value="165">165</option>
+              <option value="166">166</option>
+              <option value="167">167</option>
+              <option value="168">168</option>
+              <option value="169">169</option>
+              <option value="170">170</option>
+              <option value="171">171</option>
+              <option value="172">172</option>
+              <option value="173">173</option>
+              <option value="174">174</option>
+              <option value="175">175</option>
+              <option value="176">176</option>
+              <option value="177">177</option>
+              <option value="178">178</option>
+              <option value="179">179</option>
+              <option value="180">180</option>
+              <option value="181">181</option>
+              <option value="182">182</option>
+              <option value="183">183</option>
+              <option value="184">184</option>
+              <option value="185">185</option>
+              <option value="186">186</option>
+              <option value="187">187</option>
+              <option value="188">188</option>
+              <option value="189">189</option>
+              <option value="190">190</option>
+              <option value="191">191</option>
+              <option value="192">192</option>
+              <option value="193">193</option>
+              <option value="194">194</option>
+              <option value="195">195</option>
+              <option value="196">196</option>
+              <option value="197">197</option>
+              <option value="198">198</option>
+              <option value="199">199</option>
+              <option value="200">200</option>
+              <option value="201">201</option>
+              <option value="202">202</option>
+              <option value="203">203</option>
+              <option value="204">204</option>
+              <option value="205">205</option>
+              <option value="206">206</option>
+              <option value="207">207</option>
+              <option value="208">208</option>
+              <option value="209">209</option>
+              <option value="210">210</option>
+              <option value="211">211</option>
+              <option value="212">212</option>
+              <option value="213">213</option>
+              <option value="214">214</option>
+              <option value="215">215</option>
+              <option value="216">216</option>
+              <option value="217">217</option>
+              <option value="218">218</option>
+              <option value="219">219</option>
+              <option value="220">220</option>
+              <option value="221">221</option>
+              <option value="222">222</option>
+              <option value="223">223</option>
+              <option value="224">224</option>
+              <option value="225">225</option>
+              <option value="226">226</option>
+              <option value="227">227</option>
+              <option value="228">228</option>
+              <option value="229">229</option>
+              <option value="230">230</option>
+              <option value="231">231</option>
+              <option value="232">232</option>
+              <option value="233">233</option>
+              <option value="234">234</option>
+              <option value="235">235</option>
+              <option value="236">236</option>
+              <option value="237">237</option>
+              <option value="238">238</option>
+              <option value="239">239</option>
+              <option value="240">240</option>
+              <option value="241">241</option>
+              <option value="242">242</option>
+              <option value="243">243</option>
+              <option value="244">244</option>
+              <option value="245">245</option>
+              <option value="246">246</option>
+              <option value="247">247</option>
+              <option value="248">248</option>
+              <option value="249">249</option>
+              <option value="250">250</option>
+              <option value="251">251</option>
+              <option value="252">252</option>
+              <option value="253">253</option>
+              <option value="254">254</option>
+              <option value="255">255</option>
+            </select>
+          </div>
+
+          <div class="col-md-4">
+            <label for="pie_dominante" class="form-label">Pie dominante:</label>
+            <select id="pie_dominante" class="form-select">
+              <option value="Izquierdo">Izquierdo</option>
+              <option value="Derecho">Derecho</option>
+              <option value="ambos-d">Ambos (Derecho)</option>
+              <option value="ambos-i">Ambos (Izquierdo)</option>
+            </select>
+          </div>
+
+          <div class="col-md-4">
+            <label for="posicion" class="form-label">Posición:</label>
+            <select id="posicion" class="form-select">
+              <option value="PO">Portero</option>
+              <option value="AIZ">Lateral izquierdo</option>
+              <option value="ADR">Lateral derecho</option>
+              <option value="PIZ">Lateral izquierdo del portero</option>
+              <option value="PDR">Lateral derecho del portero</option>
+              <option value="CIZ">Central izquierdo defensivo</option>
+              <option value="CBC">Defensa central</option>
+              <option value="CDR">Central derecho defensivo</option>
+              <option value="CDC">Centrocampista central defensivo</option>
+              <option value="CDD">Centrocampista derecho defensivo</option>
+              <option value="CDI">Centrocampista izquierdo defensivo</option>
+              <option value="CC">Centrocampista central</option>
+              <option value="CI">Centrocampista izquierdo</option>
+              <option value="CD">Centrocampista derecho</option>
+              <option value="CAI">Centrocampista izquierdo ofensivo</option>
+              <option value="CAD">Centrocampista derecho ofensivo</option>
+              <option value="ED">Extremo derecho</option>
+              <option value="EZ">Extremo izquierdo</option>
+              <option value="CAC">Centrocampista central ofensivo</option>
+              <option value="DC">Delantero central</option>
+              <option value="DI">Delantero izquierdo</option>
+              <option value="DD">Delantero derecho</option>
+              <option value="PUN">Punta</option>
+            </select>
+          </div>
+
+        </div>
+        <div class="row mt-3">
+          <div class="col-md-2">
+            <label for="dia" class="form-label">Día:</label>
+            <input type="text" id="dia" class="form-control text-center" placeholder="DD">
+          </div>
+          <div class="col-md-2">
+            <label for="mes" class="form-label">Mes:</label>
+            <input type="text" id="mes" class="form-control text-center" placeholder="MM">
+          </div>
+          <div class="col-md-2">
+            <label for="ano" class="form-label">Año:</label>
+            <input type="text" id="ano" class="form-control text-center" placeholder="AAAA">
+          </div>
+          <div class="col-md-3">
+            <label for="estatura" class="form-label">Estatura (cm):</label>
+            <input type="text" id="estatura" class="form-control text-center">
+          </div>
+          <div class="col-md-3">
+            <label for="peso" class="form-label">Peso (kg):</label>
+            <input type="text" id="peso" class="form-control text-center">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+ <div class="script-container">
+    <div class="script-wrapper">
+      <script type="text/javascript">
+        atOptions = {
+          'key': '2abf984a66f4f1a82de3c599331bbc5a',
+          'format': 'iframe',
+          'height': 60,
+          'width': 468,
+          'params': {}
+        };
+        document.write('<scr' + 'ipt type="text/javascript" src="//www.topcreativeformat.com/2abf984a66f4f1a82de3c599331bbc5a/invoke.js"></scr' + 'ipt>');
+      </script>
+    </div>
+  </div>
+
+  <div class="container my-4">
+    <div class="card player-card">
+      <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+        <h5 class="mb-0">Estadísticas</h5>
+      </div>
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-2 stat-item">
+            <span class="stat-icon"><i class="fas fa-tachometer-alt"></i></span>
+            <label for="textBox_velocidad" class="form-label">Velocidad:</label>
+            <input type="text" id="textBox_velocidad" class="form-control text-center" value="0">
+          </div>
+          <div class="col-md-2 stat-item">
+            <span class="stat-icon"><i class="fas fa-bolt"></i></span>
+            <label for="textBox_aceleracion" class="form-label">Aceleración:</label>
+            <input type="text" id="textBox_aceleracion" class="form-control text-center" value="0">
+          </div>
+          <div class="col-md-2 stat-item">
+            <span class="stat-icon"><i class="fas fa-running"></i></span>
+            <label for="textBox_reistencia" class="form-label">Resistencia:</label>
+            <input type="text" id="textBox_reistencia" class="form-control text-center" value="0">
+          </div>
+          <div class="col-md-2 stat-item">
+            <span class="stat-icon"><i class="fas fa-hand-paper"></i></span>
+            <label for="textBox_control" class="form-label">Control:</label>
+            <input type="text" id="textBox_control" class="form-control text-center" value="0">
+          </div>
+          <div class="col-md-2 stat-item">
+            <span class="stat-icon"><i class="fas fa-futbol"></i></span>
+            <label for="textBox_potencia" class="form-label">Potencia:</label>
+            <input type="text" id="textBox_potencia" class="form-control text-center" value="0">
+          </div>
+        </div>
+        <div class="row mt-3">
+          <div class="col-md-2 stat-item">
+            <span class="stat-icon"><i class="fas fa-sign-in-alt"></i></span>
+            <label for="textBox_entrada" class="form-label">Entrada:</label>
+            <input type="text" id="textBox_entrada" class="form-control text-center" value="0">
+          </div>
+          <div class="col-md-2 stat-item">
+            <span class="stat-icon"><i class="fas fa-exchange-alt"></i></span>
+            <label for="textBox_pase" class="form-label">Pase:</label>
+            <input type="text" id="textBox_pase" class="form-control text-center" value="0">
+          </div>
+          <div class="col-md-2 stat-item">
+            <span class="stat-icon"><i class="fas fa-crosshairs"></i></span>
+            <label for="textBox_centro" class="form-label">Centro:</label>
+            <input type="text" id="textBox_centro" class="form-control text-center" value="0">
+          </div>
+          <div class="col-md-2 stat-item">
+            <span class="stat-icon"><i class="fas fa-bullseye"></i></span>
+            <label for="textBox_dispario" class="form-label">Disparo:</label>
+            <input type="text" id="textBox_dispario" class="form-control text-center" value="0">
+          </div>
+          <div class="col-md-2 stat-item">
+            <span class="stat-icon"><i class="fas fa-head-side-virus"></i></span>
+            <label for="textBox_cabeza" class="form-label">Cabeza:</label>
+            <input type="text" id="textBox_cabeza" class="form-control text-center" value="0">
+          </div>
+        </div>
+        <div class="row mt-3">
+          <div class="col-md-2 stat-item">
+            <span class="stat-icon"><i class="fas fa-golf-ball"></i></span>
+            <label for="textBox_balon_parado" class="form-label">Balon parado:</label>
+            <input type="text" id="textBox_balon_parado" class="form-control text-center" value="0">
+          </div>
+          <div class="col-md-2 stat-item">
+            <span class="stat-icon"><i class="fas fa-hand-sparkles"></i></span>
+            <label for="textBox_paradas_PO" class="form-label">Paradas de portero:</label>
+            <input type="text" id="textBox_paradas_PO" class="form-control text-center" value="0">
+          </div>
+          <div class="col-md-2 stat-item">
+            <span class="stat-icon"><i class="fas fa-hand-paper"></i></span>
+            <label for="textBox_manejo_PO" class="form-label">Manejo de portero:</label>
+            <input type="text" id="textBox_manejo_PO" class="form-control text-center" value="0">
+          </div>
+          <div class="col-md-2 stat-item">
+            <span class="stat-icon"><i class="fas fa-user-astronaut"></i></span>
+            <label for="textBox_precencia_PO" class="form-label">Presencia de portero:</label>
+            <input type="text" id="textBox_precencia_PO" class="form-control text-center" value="0">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="script-container">
+    <div class="script-wrapper">
+      <script type="text/javascript">
+        atOptions = {
+          'key': '2abf984a66f4f1a82de3c599331bbc5a',
+          'format': 'iframe',
+          'height': 60,
+          'width': 468,
+          'params': {}
+        };
+        document.write('<scr' + 'ipt type="text/javascript" src="//www.topcreativeformat.com/2abf984a66f4f1a82de3c599331bbc5a/invoke.js"></scr' + 'ipt>');
+      </script>
+    </div>
+  </div>
+
+  <div class="container my-4">
+    <div class="card player-card">
+      <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+        <h5 class="mb-0">Apariencia</h5>
+      </div>
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-4">
+            <label for="color_piel" class="form-label">Color de piel:</label>
+            <select id="color_piel" class="form-select">
+              <option value="blanco">Blanco</option>
+              <option value="rojizo">Rojizo</option>
+              <option value="negro_claro">Negro claro</option>
+              <option value="negro_medio">Negro medio</option>
+              <option value="negro_oscuro">Negro oscuro</option>
+              <option value="amarillo">Amarillo</option>
+            </select>
+          </div>
+          <div class="col-md-4">
+            <label for="color_cabello" class="form-label">Color de cabello:</label>
+            <select id="color_cabello" class="form-select">
+              <option value="negro">Negro</option>
+              <option value="castaño">Castaño</option>
+              <option value="castaño_claro">Castaño claro</option>
+              <option value="castaño_oscuro">Castaño oscuro</option>
+              <option value="rubio_claro">Rubio claro</option>
+              <option value="rubio_oscuro">Rubio oscuro</option>
+              <option value="rojizo">Rojizo</option>
+              <option value="gris">Gris</option>
+            </select>
+          </div>
+          <div class="col-md-4">
+            <label for="tipo_cabello" class="form-label">Tipo de Cabello:</label>
+            <select id="tipo_cabello" class="form-select">
+              <option value="calvo">Calvo</option>
+              <option value="mohicano">Mohicano</option>
+              <option value="corto_entradas">Corto con entradas</option>
+              <option value="mohicano_largo">Mohicano largo</option>
+              <option value="lacio_atras">Lacio hacia atrás</option>
+              <option value="rapado">Rapado</option>
+              <option value="lacio_corto">Lacio corto</option>
+              <option value="rizo_medio">Rizo medio</option>
+              <option value="lacio_medio">Lacio medio</option>
+              <option value="rizo_hombros">Rizo hombros</option>
+              <option value="mohicano_corto">Mohicano corto</option>
+              <option value="cola_caballo">Cola de caballo</option>
+              <option value="rizo_corto">Rizo corto</option>
+              <option value="copete">Copete</option>
+              <option value="lacio_hombros">Lacio hombros</option>
+              <option value="rastas_hombros">Rastas hombros</option>
+              <option value="afro">Afro</option>
+            </select>
+          </div>
+        </div>
+        <div class="row mt-3">
+          <div class="col-md-4">
+            <label for="tipo_barba" class="form-label">Tipo de barba:</label>
+            <select id="tipo_barba" class="form-select">
+              <option value="ninguna">Ninguna</option>
+              <option value="bigote">Bigote</option>
+              <option value="candado">Candado</option>
+              <option value="delineada">Delineada</option>
+              <option value="cerrada">Cerrada</option>
+              <option value="cerrada_larga">Cerrada larga</option>
+              <option value="patillas">Patillas</option>
+              <option value="cerrada_corta">Cerrada corta</option>
+            </select>
+          </div>
+          <div class="col-md-4">
+            <label for="tono_piel" class="form-label">Tono de piel:</label>
+            <select id="tono_piel" class="form-select">
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="2">3</option>
+            </select>
+          </div>
+          <div class="col-md-4">
+            <label for="tipo_de_mangas" class="form-label">Mangas:</label>
+            <select id="tipo_de_mangas" class="form-select">
+              <option value="aleatorio">Aleatorio</option>
+              <option value="cortas">Cortas</option>
+              <option value="largas">Largas</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="row mt-3">
+          <div class="col-md-4">
+            <label for="color_botines" class="form-label">Color de botines:</label>
+            <select id="color_botines" class="form-select">
+              <option value="negro">Negro</option>
+              <option value="blanco">Blanco</option>
+              <option value="dorado">Dorado</option>
+              <option value="rojo">Rojo</option>
+              <option value="azul">Azul</option>
+              <option value="rosa">Rosa</option>
+              <option value="amarillo">Amarillo</option>
+              <option value="naranja">Naranja</option>
+              <option value="morado">Morado</option>
+              <option value="cafe">Café</option>
+              <option value="verde">Verde</option>
+              <option value="aleatorio">Aleatorio</option>
+            </select>
+          </div>
+          <div class="col-md-4">
+            <label for="color_guantes" class="form-label">Color de guantes:</label>
+            <select id="color_guantes" class="form-select">
+              <option value="azul">Azul</option>
+              <option value="rojo">Rojo</option>
+              <option value="verde">Verde</option>
+              <option value="amarillo">Amarillo</option>
+              <option value="negro">Negro</option>
+              <option value="No">No</option>
+            </select>
+          </div>
+          <div class="col-md-4">
+            <label for="tipo_cabeza" class="form-label">Tipo cabeza:</label>
+            <select id="tipo_cabeza" class="form-select">
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="script-container">
+    <div class="script-wrapper">
+      <script type="text/javascript">
+        atOptions = {
+          'key': '2abf984a66f4f1a82de3c599331bbc5a',
+          'format': 'iframe',
+          'height': 60,
+          'width': 468,
+          'params': {}
+        };
+        document.write('<scr' + 'ipt type="text/javascript" src="//www.topcreativeformat.com/2abf984a66f4f1a82de3c599331bbc5a/invoke.js"></scr' + 'ipt>');
+      </script>
+    </div>
+  </div>
+
+  <div class="container my-4">
+    <div class="card">
+      <div class="card-header bg-primary text-white">
+        <h5 class="mb-0">Acciones</h5>
+      </div>
+      <div class="card-body">
+        
+        <div class="d-flex justify-content-center">
+        <!-- <button class="btn btn-primary me-2" onclick="nuevoJugador()">Crear jugador</button> -->
+
+          <button class="btn btn-primary" onclick="guardarArchivo()">Guardar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type='text/javascript' src='//pl17958015.profitablegatecpm.com/95/b8/c0/95b8c051d3f8200853584c0c7c9f185c.js'></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
