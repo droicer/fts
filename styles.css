@@ -13,7 +13,6 @@ body {
     font-family: Geometos_ExtraBold;
 }
 
-
 @font-face {
     font-family: Geometos_ExtraBold;
     src: local("Geometos_ExtraBold"), url("Geometos.ttf");
@@ -24,13 +23,14 @@ body {
     flex-wrap: wrap;
     justify-content: center;
     align-content: center;
-    width: 1000px;
+    width: 90%;
+    max-width: 1000px;
 }
 
 .hex {
-    width: 130px;
-    height: 130px;
-    margin: 0px;
+    width: 120px;
+    height: 120px;
+    margin: 10px;
     position: relative;
     clip-path: polygon(25% 6.7%, 75% 6.7%, 100% 50%, 75% 93.3%, 25% 93.3%, 0% 50%);
     background-color: #3333339c;
@@ -44,6 +44,7 @@ body {
     position: relative;
     text-decoration: none;
     color: #fff;
+    text-transform: 4px;
 }
 
 .hex:hover {
@@ -64,4 +65,58 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 10px;
+}
+
+/* Media Queries for Responsiveness */
+
+@media (max-width: 1200px) {
+    .hex {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+@media (max-width: 992px) {
+    .hex {
+        width: 90px;
+        height: 90px;
+    }
+
+    .hex .icon {
+        font-size: 1.5rem;
+    }
+
+    .hex .text {
+        font-size: 9px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hex {
+        width: 80px;
+        height: 80px;
+    }
+
+    .hex .icon {
+        font-size: 1.2rem;
+    }
+
+    .hex .text {
+        font-size: 8px;
+    }
+}
+
+@media (max-width: 576px) {
+    .hex {
+        width: 60px;
+        height: 60px;
+    }
+
+    .hex .icon {
+        font-size: 1rem;
+    }
+
+    .hex .text {
+        font-size: 7px;
+    }
 }
