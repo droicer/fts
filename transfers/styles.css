@@ -130,3 +130,80 @@
     height: 100%;
     object-fit: cover;
 }
+
+.ad-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px; /* Espacio entre el anuncio y la tarjeta */
+}
+
+/*-------------------------------------------------------*/
+
+body {
+    background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
+    color: #fff;
+}
+.navbar {
+    background: linear-gradient(135deg, #2980b9, #3498db);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.search-bar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(45, 45, 45, 0.9);
+    backdrop-filter: blur(10px);
+    padding: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.card-container {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 1rem;
+    margin: 1rem 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.card {
+    background: linear-gradient(135deg, #2d2d2d, #1a1a1a);
+    border: none;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+
+.badge {
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding: 0.5rem 0.75rem;
+    border-radius: 8px;
+}
+.stats-section {
+    margin-bottom: 1.5rem;
+}
+.stats-section h6 {
+    font-size: 0.9rem;
+    color: #ffffff80;
+    margin-bottom: 0.75rem;
+}
+.stat {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+.stat-bar {
+    flex-grow: 1;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    overflow: hidden;
+}
+.stat-bar-fill {
+    height: 100%;
+    border-radius: 4px;
+}
