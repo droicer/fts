@@ -5,24 +5,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mercado de Traspasos</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.8.0/sql-wasm.js"></script>
     <script src="https://unpkg.com/@zip.js/zip.js@2.7.57/dist/zip.min.js"></script>
     <link rel="stylesheet" href="styles.css">
-
-
+    <script type='text/javascript' src='//pl17958015.effectiveratecpm.com/95/b8/c0/95b8c051d3f8200853584c0c7c9f185c.js'></script>
     <script defer src="app.js"></script>
-</head>
-<body class="bg-light">
 
+</head>
+<body>
+
+    <!-- Barra de búsqueda estática -->
+    <div class="search-bar">
+        <div class="container">
+            <h2 class="text-center mb-3">⚽ JUGADORES DLS BY DROICER</h2>
+            <div class="input-group">
+                <input type="text" id="search" class="form-control" placeholder="Buscar jugador...">
+                <button class="btn btn-primary" type="button">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contenedor principal -->
     <div class="container mt-4">
-        <h2 class="text-center">⚽ Mercado de Traspasos DLS 25</h2>
-        <div class="input-group mb-3">
-            <input type="text" id="search" class="form-control" placeholder="Buscar jugador...">
+        <!-- Anuncio -->
+        <div class="text-center mb-4">
+            <script type="text/javascript">
+                atOptions = {
+                    'key' : '2abf984a66f4f1a82de3c599331bbc5a',
+                    'format' : 'iframe',
+                    'height' : 60,
+                    'width' : 468,
+                    'params' : {}
+                };
+            </script>
+            <script type="text/javascript" src="//www.highperformanceformat.com/2abf984a66f4f1a82de3c599331bbc5a/invoke.js"></script>
         </div>
 
+        <!-- Contenedor de tarjetas -->
         <div id="jugadores-container" class="row"></div>
-
-        
     </div>
 
 </body>
