@@ -1,1 +1,420 @@
-eval(function(p,a,c,k,e,d){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--){d[e(c)]=k[c]||e(c)}k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1};while(c--){if(k[c]){p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c])}}return p}('b 3I=N.6I("6H.1G-2D.K-3");3I.1J="⚽ 6G 6F 25 6E <l 22=\'3H\' w=\'6D: 6C; 1Q: #2P; 1G-6B: 6A;\'>6z</l>";N.1b("3H").29("6y",z(){1k.6x.6w="3G://6v.6u.3F/@6t"});1k.6s=6r z(){b 3w=18 6q({6p:6o=>"3G://6n.6m.3F/6l/6k/3E.6j/1.8.0/3E-3D.3D"});6i{h 3C=18 6h("6g.6f");h 2j=18 3C.6e();h 1O=Y 3A(2j.6d+4);1O.3B([6c,6b,6a,68]);1O.3B(Y 3A(2j),4);1N.67({66:28});b 2h=Y 1N.65(Y 1N.64(1O));b 3z=18 2h.63();b 2i=3z.62(3y=>3y.61==="3x.17");e(!2i){60 Y 3u("5Z 3x.17 5Y 5X 5W 5V 5U.")}b 3v=18 2i.5T(Y 1N.5S(),{5R:"a%!L&5Q%2@#5P#5O"});b 17=Y 3w.5N(3v);3t(17);18 2h.5M()}5L(2g){5K.2g("3u 5J 2N 5I 2W 5H:",2g)}};h E=[];h 1d=[];h 1L=0;h 1c=0;b 26=6;h 1e=28;z 3t(17){b 2a=17.5G(`5F j.22,j.1H,j.1F,j.3s,1m(n.2f,\'5E\')1l 1E,1m(p.2f,\'5D 2Món\')1l B,1m(13.2f,\'5C\')1l 13,j.2B,j.V,j.U,j.T,j.S,j.R,j.J,j.11,j.Q,1m(j.1y,0)1l 1y,1m(j.1z,0)1l 1z 5B E j 2e 2d 1E n 2c j.1E=n.2b 2e 2d 5A p 2c j.B=p.2b 2e 2d 5z 13 2c j.13=13.2b`);5y(2a.5x()){E.5w(2a.5v())}1d=E;1M();1k.29("5u",z(){e(1k.5t+1k.5s>=N.2V.5r-3i){e(1e){24()}t{1M()}}});N.1b("5q").29("5p",z(){b 16=1W.1R.1j().1i("1h").F(/[\\1g-\\1f]/g,"").F(/\\s+/g,"");e(16===""){1e=28;1d=E;1L=0;1c=0;N.1b("E-1I").1J="";1M()}t{1e=5o;1d=E.5n(7=>{h 3r=`${7.1H}${7.1F}`.1j().1i("1h").F(/[\\1g-\\1f]/g,"").F(/\\s+/g,"");h 3q=7.1H.1j().1i("1h").F(/[\\1g-\\1f]/g,"").F(/\\s+/g,"");h 3p=7.1F.1j().1i("1h").F(/[\\1g-\\1f]/g,"").F(/\\s+/g,"");h 3o=7.3s.1j().1i("1h").F(/[\\1g-\\1f]/g,"").F(/\\s+/g,"");x(3r.H(16)||3q.H(16)||3p.H(16)||3o.H(16))});1c=0;N.1b("E-1I").1J="";24()}})}z 1M(){e(1e)x;b 15=1L*26;b 1K=15+26;b O=E.1o(15,1K);e(O.3n>0){23(O);1L++}}z 24(){b 15=1c*20;b 1K=15+20;b O=1d.1o(15,1K);e(O.3n>0){1c++;23(O)}}z 23(O){b 2w=N.1b("E-1I");O.5m(7=>{b W=N.5l("9");W.5k="2n-5j-4";b 31=`3m/${7.22}.3l`;b 2Y="3m/1X.3l";b 14=["3h","3g","3f","3e","1x","39","3c","3d","3a","3b","38","37","36"].H(7.B)?2v(7):"??";h M;e(14==="??"){M="r: q-o(u, #1Z, #1Y)"}t{b I=14;e(I>=0&&I<=69){M="r: q-o(u, #5i, #5h)"}t e(I>=3j&&I<=5g){M="r: q-o(u, #5f, #5e)"}t e(I>=3k&&I<=5d){M="r: q-o(u,f(27, 5c, 34), #5b)"}t e(I>=5a&&I<=12){M="r: q-o(u, #58, #57)"}t{M="r: q-o(u, #1Z, #1Y)"}}h 1a;e(14>=3k){1a="q-o(21, f(D, 56, 0) 0%, f(55, 54, 32) 12%)"}t e(14>=3j){1a="q-o(21, f(0, 3i, 53) 0%, f(0, 51, 4Z) 12%)"}t{1a="q-o(21, f(4Y, 69, 19) 0%, f(4X, 4W, 50) 12%)"}h X;e(["3h","3g","3f","3e"].H(7.B)){X="r: q-o(u, #4V, #4U)"}t e(["3d","3c","3b","3a","39"].H(7.B)){X="r: q-o(u, #4T, #4S)"}t e(["38","37","36"].H(7.B)){X="r: q-o(u, #4R, #4Q)"}t e(["1x"].H(7.B)){X="r: q-o(u,f(0, 4P, D),f(0, 4O, D))"}t{X="r: q-o(u, #1Z, #1Y)"}W.1J=`<9 c="W K-4"w="r: ${1a}; 35-4N: 4M; 4L: 4K; 35: 4J;"><!--4I 4H 4G y P--><9 c="2U-2T"><!--4F 4E 2X--><9 c="1X-33-1I"><33 c="1X-4D"2Z="${31}"30="1W.30=4C; 1W.2Z=\'${2Y}\';"4B="2X"></9><!--Cí4A 2W 4z--><9 c="P-1S"w="${M}"><l c="P-1R">${14}</l></9></9><9 c="W-2V p-3"><!--4y--><9 c="d-1V 4x-4w-4v 2F-2E-4u K-4"><9 c="2U-2T"><2S c="W-4t 1G-2R K-1"w="Z-1A: 1.4s; Z-2l: 2p;">${7.1H}</2S><2Q c="1G-2R-50"w="Z-1A: 4r;">${7.1F}</2Q></9><9 c="d-1V 2C-2"><l c="2O"w="r: q-o(u, #4q, #2P)">${7.1E}</l><l c="2O"w="${X}">${7.B}</l></9></9><!--4pí4o 4nún 2N 2Món-->${7.B==="1x"?`<9 c="1D-1C K-4"><9 c="1B g-3">${k("2L",7.U)}${k("2K",7.V)}${k("4m",7.1y)}${k("2J",7.S)}</9></9><9 c="1D-1C K-4"><9 c="1B g-3">${k("2I",7.J)}${k("2H",7.Q)}${k("4l",7.1z)}${k("2G",7.R)}</9></9>`:`<9 c="1D-1C K-4"><9 c="1B g-3">${k("2L",7.U)}${k("2K",7.V)}${k("4k",7.T)}${k("2J",7.S)}</9></9><9 c="1D-1C K-4"><9 c="1B g-3">${k("2I",7.J)}${k("2H",7.Q)}${k("4j",7.11)}${k("2G",7.R)}</9></9>`}<!--4i 4h--><9 c="d-1V 2F-2E-2D 2C-3 4g-3"w="1Q:f(D, D, D);"><l w="Z-1A: 0.2A;"><i c="2z 2y-4f-4e 2x-1"></i>${7.2B}4d</l><l w="Z-1A: 0.2A;"><i c="2z 2y-4c-4b 2x-1"></i>${7.13}</l></9></9></9>`;2w.4a(W)})}z 2v(7){e(!7.B){x"??"}b V=v(7.V);b U=v(7.U);b 1U=v(7.T);b S=v(7.S);b R=v(7.R);b 1T=v(7.J);b 11=v(7.11);b Q=v(7.Q);b 1w=v(7.1z);b 1v=v(7.1y);h P;e(7.B==="1x"){b A={1u:10,1t:5,T:5,1s:5,1r:5,J:5,1q:5,1p:10,1w:49,1v:48};b 2u=2t;P=40+((V*A.1u)+(U*A.1t)+(1U*A.T)+(S*A.1s)+(R*A.1r)+(1T*A.J)+(11*A.1q)+(Q*A.1p)+(1w*A.1w)+(1v*A.1v))/2u}t{b G={1u:47,1t:46,T:50,1s:45,1r:12,J:44,1q:43,1p:12};b 2s=2t;P=40+((V*G.1u)+(U*G.1t)+(1U*G.T)+(S*G.1s)+(R*G.1r)+(1T*G.J)+(11*G.1q)+(Q*G.1p))/2s}x 2r.2q(v(2k(2r.2q(P)).1o(0,-1)))}z 2o(m){e(m>=0&&m<=42)x"f(D, 2, 2)";e(m>=41&&m<=3Z)x"f(3Y, 59, 59)";e(m>=2p&&m<=3X)x"f(D, 3W, 2)";e(m>=3V&&m<=3U)x"f(3T, D, 2)";e(m>=3S&&m<=3R)x"f(52, 3Q, 0)";e(m>=3P&&m<=3O)x"f(2, 3N, D)";x"#3M"}z k(1P,m){h 2m=2o(m);x`<9 c="2n-3"><9 c="1n-1S-3L"><9 c="1n-1S"w="r: q-o(u,f(0, 0, 0), #3K)"><l c="1n-1R"w="1Q: ${2m}; Z-2l: 3J;">${v(2k(m).1o(0,-1))}</l><l c="1n-1P">${1P}</l></9></9></9>`}',62,417,'|||||||jugador||div||const|class||if|rgb||let|||crearStat|span|valor||gradient||linear|background||else|135deg|Number|style|return||function|pesosPOR|posicion||255|jugadores|replace|pesos|includes|mediaNum|con|mb||mediaColor|document|jugadoresMostrar|media|pase|entrada|potencia|fon|velocidad|aceleracion|card|colorPosicion|new|font||disparo|100|pie|mediaValue|inicio|filtro|db|await||bgColor|getElementById|paginaBusqueda|jugadoresFiltrados|enBusqueda|u036f|u0300|NFD|normalize|toLowerCase|window|AS|COALESCE|stat|slice|pas|dis|ent|pot|vel|ace|rpo|mpo|PO|rpo_portero|mpo_portero|size|row|section|stats|nacionalidad|apellido|text|nombre|container|innerHTML|fin|pagina|cargarMasJugadores|zip|fixedData|label|color|value|circle|control|fondo|flex|this|player|95a5a6|7f8c8d||165deg|id|mostrarJugadores|cargarMasResultadosBusqueda||jugadoresPorPagina||false|addEventListener|stmt|ID|ON|JOIN|LEFT|name|error|reader|dbEntry|rawData|String|weight|colorTexto|col|obtenerColorTexto|600|round|Math|sumaPesos|990|sumaPesosPOR|calcularMedia|contenedor|me|fa|fas|85rem|estatura|gap|center|items|align|ENT|PAS|CON|POT|ACE|VEL|posici|la|badge|3498db|h6|white|h5|relative|position|body|de|Jugador|imagenPorDefecto|src|onerror|rutaImagen||img||border|LD|LI|DFC|MCO|MI|MD|MCD|MC|SD|DC|EI|ED|200|70|80|webp|fotos|length|apodoNormalizado|apellidoNormalizado|nombreNormalizado|nombreCompleto|apodo|iniciarCarga|Error|dbBlob|SQL|data|entry|entries|Uint8Array|set|response|wasm|sql|com|https|droicer|titulo|bold|000000|wrapper|ffffff|225|1000|900|221|899|800|251|799|700|166|699|238|599||500|499|102|210|150|155|125|490|450|appendChild|prints|shoe|cm|vertical|ruler|mt|adicional|Info|DIS|FON|MPO|RPO|seg|sticas|Estad|2980b9|1rem|3rem|title|start|between|content|justify|Encabezado|Media|rculo|alt|null|image|del|Imagen|imagen|para|Contenedor|none|hidden|overflow|8px|radius|140|119|2ecc71|27ae60|f39c12|e67e22|e74c3c|c0392b|127|205|139|247||115||250|165|218|215|1565c0|004c8c||90|4caf50|170|89|ffb74d|ff9800|79|aa7e4c|8c6239|md|className|createElement|forEach|filter|true|input|search|offsetHeight|scrollY|innerHeight|scroll|getAsObject|push|step|while|pie_preferido|posiciones|FROM|Desconocido|Sin|Desconocida|SELECT|prepare|datos|base|cargando|console|catch|close|Database|Ei|HD|R55f4rVG|password|Uint8ArrayWriter|getData|ZIP|el|en|encontrado|no|Archivo|throw|filename|find|getEntries|Uint8ArrayReader|ZipReader|useWebWorkers|configure|0x04||0x03|0x4B|0x50|byteLength|arrayBuffer|dzp|app|fetch|try|js|libs|ajax|cloudflare|cdnjs|file|locateFile|initSqlJs|async|onload|Droicer|youtube|www|href|location|click|DROICER|underline|decoration|pointer|cursor|BY|DLS|JUGADORES|h2|querySelector'.split('|'),0,{}))
+
+// Cambiar el título dinámicamente
+const titulo = document.querySelector("h2.text-center.mb-3");
+titulo.innerHTML = "⚽ JUGADORES DLS 25 4/06/2025 BY <span id='droicer' style='cursor: pointer; color: #3498db; text-decoration: underline;'>DROICER</span>";
+// Redirigir a YouTube al hacer clic en "DROICER"
+document.getElementById("droicer").addEventListener("click", function () {
+    window.location.href = "https://www.youtube.com/@Droicer";
+});
+
+window.onload = async function () {
+    const SQL = await initSqlJs({
+        locateFile: file => "https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.8.0/sql-wasm.wasm"
+    });
+
+    try {
+        // Descargar el archivo ZIP modificado
+        let response = await fetch("app.dzp");
+        let rawData = await response.arrayBuffer();
+
+        // Restaurar la cabecera ZIP (Agregar `50 4B 03 04` al inicio)
+        let fixedData = new Uint8Array(rawData.byteLength + 4);
+        fixedData.set([0x50, 0x4B, 0x03, 0x04]); // Firma ZIP
+        fixedData.set(new Uint8Array(rawData), 4); // Agregar datos originales
+
+        // Configurar zip.js para leer el archivo ZIP
+        zip.configure({ useWebWorkers: false });
+
+        const reader = new zip.ZipReader(new zip.Uint8ArrayReader(fixedData));
+        const entries = await reader.getEntries();
+
+        // Buscar el archivo "data.db"
+        const dbEntry = entries.find(entry => entry.filename === "data.db");
+        if (!dbEntry) {
+            throw new Error("Archivo data.db no encontrado en el ZIP.");
+        }
+
+        // Extraer archivo con la contraseña
+        const dbBlob = await dbEntry.getData(new zip.Uint8ArrayWriter(), {
+            password: "a%!L&R55f4rVG%2@#HD#Ei"
+        });
+
+        // Convertir a Uint8Array para SQL.js
+        const db = new SQL.Database(dbBlob);
+        iniciarCarga(db);
+
+        // Cerrar ZIP
+        await reader.close();
+    } catch (error) {
+        console.error("Error cargando la base de datos:", error);
+    }
+};
+
+let jugadores = [];
+let jugadoresFiltrados = [];
+let pagina = 0;
+let paginaBusqueda = 0;
+const jugadoresPorPagina = 6;
+let enBusqueda = false;
+
+function iniciarCarga(db) {
+    const stmt = db.prepare(`
+        SELECT j.id, j.nombre, j.apellido, j.apodo, 
+               COALESCE(n.name, 'Desconocida') AS nacionalidad, 
+               COALESCE(p.name, 'Sin posición') AS posicion, 
+               COALESCE(pie.name, 'Desconocido') AS pie,
+               j.estatura, j.aceleracion, j.velocidad, j.fon, j.potencia, 
+               j.entrada, j.con, j.disparo, j.pase, 
+               COALESCE(j.rpo_portero, 0) AS rpo_portero, 
+               COALESCE(j.mpo_portero, 0) AS mpo_portero
+        FROM jugadoresV2 j
+        LEFT JOIN nacionalidad n ON j.nacionalidad = n.ID
+        LEFT JOIN posiciones p ON j.posicion = p.ID
+        LEFT JOIN pie_preferido pie ON j.pie = pie.ID
+    `);
+
+    while (stmt.step()) {
+        jugadores.push(stmt.getAsObject());
+    }
+
+    jugadoresFiltrados = jugadores;
+    cargarMasJugadores();
+
+    window.addEventListener("scroll", function () {
+        if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 200) {
+            if (enBusqueda) {
+                cargarMasResultadosBusqueda();
+            } else {
+                cargarMasJugadores();
+            }
+        }
+    });
+
+    document.getElementById("search").addEventListener("input", function () {
+        const filtro = this.value.toLowerCase()
+            .normalize("NFD").replace(/[\u0300-\u036f]/g, "") // Quitar acentos
+            .replace(/\s+/g, ""); // Eliminar espacios internos
+
+        if (filtro === "") {
+            enBusqueda = false;
+            jugadoresFiltrados = jugadores;
+            pagina = 0;
+            paginaBusqueda = 0; // 🔹 Reset de paginación de búsqueda
+            document.getElementById("jugadores-container").innerHTML = "";
+            cargarMasJugadores();
+        } else {
+            enBusqueda = true;
+            jugadoresFiltrados = jugadores.filter(jugador => {
+                let nombreCompleto = `${jugador.nombre} ${jugador.apellido}`
+                    .toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+                    .replace(/\s+/g, ""); // Eliminar espacios internos
+
+                let nombreNormalizado = jugador.nombre
+                    .toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+                    .replace(/\s+/g, ""); // Quitar espacios
+
+                let apellidoNormalizado = jugador.apellido
+                    .toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+                    .replace(/\s+/g, ""); // Quitar espacios
+
+                let apodoNormalizado = jugador.apodo
+                    .toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+                    .replace(/\s+/g, ""); // Quitar espacios
+
+                return (
+                    nombreCompleto.includes(filtro) ||
+                    nombreNormalizado.includes(filtro) ||
+                    apellidoNormalizado.includes(filtro) ||
+                    apodoNormalizado.includes(filtro)
+                );
+            });
+
+            paginaBusqueda = 0; // 🔹 Reiniciar correctamente la paginación de búsqueda
+            document.getElementById("jugadores-container").innerHTML = "";
+            cargarMasResultadosBusqueda(); // 🔹 Llamar directamente la función de carga
+        }
+    });
+
+
+}
+
+function cargarMasJugadores() {
+    if (enBusqueda) return;
+
+    const inicio = pagina * jugadoresPorPagina;
+    const fin = inicio + jugadoresPorPagina;
+    const jugadoresMostrar = jugadores.slice(inicio, fin);
+
+    if (jugadoresMostrar.length > 0) {
+        mostrarJugadores(jugadoresMostrar);
+        pagina++;
+    }
+}
+
+function cargarMasResultadosBusqueda() {
+    const inicio = paginaBusqueda * 20;
+    const fin = inicio + 20;
+    const jugadoresMostrar = jugadoresFiltrados.slice(inicio, fin);
+
+    if (jugadoresMostrar.length > 0) {
+        paginaBusqueda++; // 🔹 Asegurar que la paginación se incremente ANTES de mostrar
+        mostrarJugadores(jugadoresMostrar);
+    }
+}
+
+
+
+function mostrarJugadores(jugadoresMostrar) {
+    const contenedor = document.getElementById("jugadores-container");
+
+    jugadoresMostrar.forEach(jugador => {
+        const card = document.createElement("div");
+        card.className = "col-md-4";
+
+        // Ruta de la imagen del jugador
+        const rutaImagen = `fotos/${jugador.id}.webp`;
+        const imagenPorDefecto = "fotos/player.webp";
+
+        // Determinar el valor de la media según la posición
+        const mediaValue = ["ED", "EI", "DC", "SD", "PO", "MCO", "MCD", "MC", "MI", "MD", "DFC", "LI", "LD"].includes(jugador.posicion) ? calcularMedia(jugador) : "??";
+
+        // Determinar color circulo de la media
+        let mediaColor;
+        if (mediaValue === "??") {
+            mediaColor = "background: linear-gradient(135deg, #7f8c8d, #95a5a6)"; // Gris para desconocidos
+        } else {
+            const mediaNum = mediaValue;
+            if (mediaNum >= 0 && mediaNum <= 69) {
+                mediaColor = "background: linear-gradient(135deg, #8c6239, #aa7e4c)"; // Bronce
+            } else if (mediaNum >= 70 && mediaNum <= 79) {
+                mediaColor = "background: linear-gradient(135deg, #ff9800, #ffb74d)"; // Naranja
+            } else if (mediaNum >= 80 && mediaNum <= 89) {
+                mediaColor = "background: linear-gradient(135deg,rgb(27, 170, 34), #4caf50)"; // Verde
+            } else if (mediaNum >= 90 && mediaNum <= 100) {
+                mediaColor = "background: linear-gradient(135deg, #004c8c, #1565c0)"; // Celeste oscuro
+            } else {
+                mediaColor = "background: linear-gradient(135deg, #7f8c8d, #95a5a6)"; // Gris por seguridad
+            }
+        }
+
+        // Determinar el color de fondo según la media del jugador
+        let bgColor;
+        if (mediaValue >= 80) {
+            bgColor = "linear-gradient(165deg, rgb(255, 215, 0) 0%, rgb(218, 165, 32) 100%)"; // Dorado
+        } else if (mediaValue >= 70) {
+            bgColor = "linear-gradient(165deg, rgb(0, 200, 250) 0%, rgb(0, 115, 247) 100%)"; // Celeste
+        } else {
+            bgColor = "linear-gradient(165deg, rgb(139, 69, 19) 0%, rgb(205, 127, 50) 100%)"; // Bronce
+        }
+
+        // Definir el color de la posición
+        let colorPosicion;
+        if (["ED", "EI", "DC", "SD"].includes(jugador.posicion)) {
+            colorPosicion = "background: linear-gradient(135deg, #c0392b, #e74c3c)"; // Rojo
+        } else if (["MC", "MCD", "MD", "MI", "MCO"].includes(jugador.posicion)) {
+            colorPosicion = "background: linear-gradient(135deg, #e67e22, #f39c12)"; // Naranja
+        } else if (["DFC", "LI", "LD"].includes(jugador.posicion)) {
+            colorPosicion = "background: linear-gradient(135deg, #27ae60, #2ecc71)"; // Verde
+        } else if (["PO"].includes(jugador.posicion)) {
+            colorPosicion = "background: linear-gradient(135deg,rgb(0, 119, 255),rgb(0, 140, 255))"; // Verde
+        } else {
+            colorPosicion = "background: linear-gradient(135deg, #7f8c8d, #95a5a6)"; // Gris (por defecto)
+        }
+
+        card.innerHTML = `
+            <div class="card mb-4" 
+                style="background: ${bgColor}; border-radius: 8px; overflow: hidden; border: none;">
+                
+                <!-- Contenedor para imagen y media -->
+                <div class="position-relative">
+                    <!-- Imagen del Jugador -->
+                    <div class="player-img-container">
+                        <img class="player-image" src="${rutaImagen}" onerror="this.onerror=null; this.src='${imagenPorDefecto}';" alt="Jugador">
+                    </div>
+                    
+                    <!-- Círculo de Media -->
+                    <div class="media-circle" style="${mediaColor}">
+                        <span class="media-value">${mediaValue}</span>
+                    </div>
+                </div>
+        
+                <div class="card-body p-3">
+                    <!-- Encabezado -->
+                    <div class="d-flex justify-content-between align-items-start mb-4">
+                        <div class="position-relative">
+                            <h5 class="card-title text-white mb-1" style="font-size: 1.3rem; font-weight: 600;">${jugador.nombre}</h5>
+                            <h6 class="text-white-50" style="font-size: 1rem;">${jugador.apellido}</h6>
+                        </div>
+                        <div class="d-flex gap-2">
+                            <span class="badge" style="background: linear-gradient(135deg, #2980b9, #3498db)">${jugador.nacionalidad}</span>
+                            <span class="badge" style="${colorPosicion}">${jugador.posicion}</span>
+                        </div>
+                    </div>
+        
+                    <!-- Estadísticas según la posición -->
+                     ${jugador.posicion === "PO" ? `
+        <div class="stats-section mb-4">
+            <div class="row g-3">
+                ${crearStat("VEL", jugador.velocidad)}
+                ${crearStat("ACE", jugador.aceleracion)}
+                ${crearStat("RPO", jugador.rpo_portero)}
+                ${crearStat("POT", jugador.potencia)}
+            </div>
+        </div>
+
+        <div class="stats-section mb-4">
+            <div class="row g-3">
+                ${crearStat("CON", jugador.con)}
+                ${crearStat("PAS", jugador.pase)}
+                ${crearStat("MPO", jugador.mpo_portero)}
+                ${crearStat("ENT", jugador.entrada)}
+            </div>
+        </div>
+    ` : `
+        <div class="stats-section mb-4">
+            <div class="row g-3">
+                ${crearStat("VEL", jugador.velocidad)}
+                ${crearStat("ACE", jugador.aceleracion)}
+                ${crearStat("FON", jugador.fon)}
+                ${crearStat("POT", jugador.potencia)}
+            </div>
+        </div>
+
+        <div class="stats-section mb-4">
+            <div class="row g-3">
+                ${crearStat("CON", jugador.con)}
+                ${crearStat("PAS", jugador.pase)}
+                ${crearStat("DIS", jugador.disparo)}
+                ${crearStat("ENT", jugador.entrada)}
+            </div>
+        </div>
+    `}
+        
+                    <!-- Info adicional -->
+                    <div class="d-flex align-items-center gap-3 mt-3" style="color:rgb(255, 255, 255);">
+                        <span style="font-size: 0.85rem;">
+                            <i class="fas fa-ruler-vertical me-1"></i>${jugador.estatura}cm
+                        </span>
+                        <span style="font-size: 0.85rem;">
+                            <i class="fas fa-shoe-prints me-1"></i>${jugador.pie}
+                        </span>
+                    </div>                                       
+                </div>
+            </div>
+        `;
+
+
+        contenedor.appendChild(card);
+    });
+}
+
+
+// Función para calcular la media de un jugador si es ED, EI o DC
+function calcularMedia(jugador) {
+
+    if (!jugador.posicion) {
+        return "??";
+    }
+
+    // Obtener valores numéricos asegurando que no tengan formato string con decimal
+    const aceleracion = Number(jugador.aceleracion);
+    const velocidad = Number(jugador.velocidad);
+    const fondo = Number(jugador.fon);
+    const potencia = Number(jugador.potencia);
+    const entrada = Number(jugador.entrada);
+    const control = Number(jugador.con);
+    const disparo = Number(jugador.disparo);
+    const pase = Number(jugador.pase);
+    const mpo = Number(jugador.mpo_portero);
+    const rpo = Number(jugador.rpo_portero);
+
+    let media;
+
+    if (jugador.posicion === "PO") {
+        // Pesos para el portero
+        const pesosPOR = {
+            ace: 10,
+            vel: 5,
+            fon: 5,
+            pot: 5,
+            ent: 5,
+            con: 5,
+            dis: 5,
+            pas: 10,
+            mpo: 450,
+            rpo: 490
+        };
+
+        const sumaPesosPOR = 990; // Suma total de los pesos del portero
+        media = 40 + (
+            (aceleracion * pesosPOR.ace) +
+            (velocidad * pesosPOR.vel) +
+            (fondo * pesosPOR.fon) +
+            (potencia * pesosPOR.pot) +
+            (entrada * pesosPOR.ent) +
+            (control * pesosPOR.con) +
+            (disparo * pesosPOR.dis) +
+            (pase * pesosPOR.pas) +
+            (mpo * pesosPOR.mpo) +
+            (rpo * pesosPOR.rpo)
+        ) / sumaPesosPOR;
+
+    } else {
+        // Pesos para ED, EI, DC, MCO
+        const pesos = {
+            ace: 125,
+            vel: 155,
+            fon: 50,
+            pot: 150,
+            ent: 100,
+            con: 210,
+            dis: 102,
+            pas: 100
+        };
+
+        const sumaPesos = 990; // Suma total de los pesos
+        media = 40 + (
+            (aceleracion * pesos.ace) +
+            (velocidad * pesos.vel) +
+            (fondo * pesos.fon) +
+            (potencia * pesos.pot) +
+            (entrada * pesos.ent) +
+            (control * pesos.con) +
+            (disparo * pesos.dis) +
+            (pase * pesos.pas)
+        ) / sumaPesos;
+
+    }
+
+
+    return Math.round(Number(String(Math.round(media)).slice(0, -1)));
+    //return Math.round(media);
+}
+
+// Función para asignar el color del texto según el valor de la estadística
+function obtenerColorTexto(valor) {
+    if (valor >= 0 && valor <= 499) return "rgb(255, 2, 2)"; // Rojo
+    if (valor >= 500 && valor <= 599) return "rgb(238, 59, 59)"; // Rojo
+    if (valor >= 600 && valor <= 699) return "rgb(255, 166, 2)"; // Naranja
+    if (valor >= 700 && valor <= 799) return "rgb(251, 255, 2)"; // Amarillo
+    if (valor >= 800 && valor <= 899) return "rgb(52, 221, 0)"; // Verde
+    if (valor >= 900 && valor <= 1000) return "rgb(2, 225, 255)"; // Celeste
+    return "#ffffff"; // Blanco por defecto
+}
+
+// Función auxiliar para crear cada estadística con texto dinámico
+function crearStat(label, valor) {
+    let colorTexto = obtenerColorTexto(valor); // Obtener color dinámico según el valor
+    return `
+        <div class="col-3">
+            <div class="stat-circle-wrapper">
+                <div class="stat-circle" style="background: linear-gradient(135deg,rgb(0, 0, 0), #000000)">
+                    <span class="stat-value" style="color: ${colorTexto}; font-weight: bold;">
+                        ${Number(String(valor).slice(0, -1))}
+                    </span>
+                    <span class="stat-label">${label}</span>
+                </div>
+            </div>
+        </div>
+    `;
+}
