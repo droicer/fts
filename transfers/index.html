@@ -50,7 +50,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: 
+      background:
         radial-gradient(circle at 20% 50%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
         radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.3) 0%, transparent 50%),
         radial-gradient(circle at 40% 80%, rgba(120, 219, 255, 0.3) 0%, transparent 50%);
@@ -59,8 +59,15 @@
     }
 
     @keyframes gradientShift {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.8; }
+
+      0%,
+      100% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 0.8;
+      }
     }
 
     /* Navbar mejorada */
@@ -114,8 +121,17 @@
     }
 
     @keyframes sparkle {
-      0%, 100% { opacity: 0.5; transform: translateY(-50%) scale(1); }
-      50% { opacity: 1; transform: translateY(-50%) scale(1.2); }
+
+      0%,
+      100% {
+        opacity: 0.5;
+        transform: translateY(-50%) scale(1);
+      }
+
+      50% {
+        opacity: 1;
+        transform: translateY(-50%) scale(1.2);
+      }
     }
 
     /* Contenedor de búsqueda mejorado */
@@ -145,8 +161,13 @@
     }
 
     @keyframes rotate {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
+      from {
+        transform: rotate(0deg);
+      }
+
+      to {
+        transform: rotate(360deg);
+      }
     }
 
     @keyframes slideDown {
@@ -154,6 +175,7 @@
         opacity: 0;
         transform: translateY(-30px);
       }
+
       to {
         opacity: 1;
         transform: translateY(0);
@@ -253,7 +275,7 @@
       transform: translateY(-2px);
     }
 
-    
+
 
     /* Botón toggle mejorado */
     .toggle-btn {
@@ -304,6 +326,7 @@
         opacity: 0;
         transform: translateY(30px);
       }
+
       to {
         opacity: 1;
         transform: translateY(0);
@@ -343,9 +366,17 @@
     }
 
     @keyframes pulse {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.05); }
-      100% { transform: scale(1); }
+      0% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.05);
+      }
+
+      100% {
+        transform: scale(1);
+      }
     }
 
     /* Loading spinner */
@@ -366,8 +397,13 @@
     }
 
     @keyframes spin {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
     }
 
     /* Responsive improvements */
@@ -375,30 +411,64 @@
       .navbar-brand {
         font-size: 1.2rem;
       }
-      
+
       .search-container {
         padding: 1.5rem;
         margin: 1rem 0;
       }
-      
+
       .main-container {
         padding: 1.5rem;
         margin: 1rem;
         border-radius: 20px;
       }
-      
+
       .search-input {
         padding: 15px 20px;
         font-size: 1rem;
       }
-      
+
       .search-btn {
         padding: 15px 25px;
       }
-      
+
       /* Ajustar padding del contenido principal en móviles */
       .container[style*="padding-top"] {
         padding-top: 80px !important;
+      }
+
+      .ad-container {
+        display: flex;
+        justify-content: center;
+        /* Centra el anuncio horizontalmente */
+        width: 100%;
+      }
+
+      .ad-wrapper {
+        width: 100%;
+        max-width: 468px;
+        /* Ancho máximo del anuncio */
+        overflow: hidden;
+        /* Evita que el contenido se desborde */
+      }
+
+      .ad-wrapper iframe {
+        width: 100% !important;
+        /* Forzar el ancho al 100% del contenedor */
+        height: auto;
+        /* Permitir que la altura se ajuste */
+        aspect-ratio: 468 / 60;
+        /* Mantener la proporción original del anuncio */
+        display: block;
+        /* Evitar espacios no deseados */
+      }
+
+      /* Media query para pantallas pequeñas */
+      @media (max-width: 500px) {
+        .ad-wrapper {
+          max-width: 100%;
+          /* Ajustar al ancho completo en pantallas pequeñas */
+        }
       }
     }
 
@@ -434,65 +504,60 @@
   <nav class="navbar navbar-custom">
     <div class="container d-flex justify-content-between align-items-center py-2">
       <span class="navbar-brand mb-0 h1">⚽ JUGADORES DLS25 BY DROICER</span>
-      <button class="btn toggle-btn" type="button" data-bs-toggle="collapse"
-        data-bs-target="#busquedaFiltros" aria-controls="busquedaFiltros" aria-expanded="false"
-        aria-label="Mostrar/Ocultar filtros">
+      <button class="btn toggle-btn" type="button" data-bs-toggle="collapse" data-bs-target="#busquedaFiltros"
+        aria-controls="busquedaFiltros" aria-expanded="false" aria-label="Mostrar/Ocultar filtros">
         <i class="fas fa-sliders-h"></i>
         <span class="ms-2 d-none d-sm-inline">Filtros</span>
       </button>
     </div>
-    <!-- BUSCADOR Y FILTROS MEJORADOS -->
+
+ <div class="container py-2">
+  <div class="search-input-group">
+    <div class="form-group">
+      <input type="text" id="search" class="form-control search-input"
+        placeholder="🔍 Buscar tu jugador favorito..." aria-label="Buscar jugador" autocomplete="off" />
+    </div>
+  </div>
+</div>
+
+    <!-- FILTROS OCULTOS HASTA QUE SE ABRAN -->
     <div class="container">
       <div class="collapse" id="busquedaFiltros">
-        <div class="search-container">
-          <!-- Buscador mejorado -->
-          <div class="search-input-group">
-            <div class="form-group">
-              <input type="text" id="search" class="form-control search-input" 
-                placeholder="🔍 Buscar tu jugador favorito..." 
-                aria-label="Buscar jugador"
-                autocomplete="off" />
-            </div>
-          </div>
-<!-- Filtros mejorados -->
-          <div class="filters-section">
-            <div class="row g-3">
-              <div class="col-md-4">
-                <div class="filter-group">
-                  <label class="filter-label" for="filtro-nacionalidad">
-                    <i class="fas fa-flag me-1"></i>Nacionalidad
-                  </label>
-                  <select id="filtro-nacionalidad" class="form-select filter-select">
-                    <option value="">🌍 Todas las nacionalidades</option>
-                  </select>
-                </div>
-              </div>
-              <div class="col-md-4">
-                <div class="filter-group">
-                  <label class="filter-label" for="filtro-posicion">
-                    <i class="fas fa-running me-1"></i>Posición
-                  </label>
-                  <select id="filtro-posicion" class="form-select filter-select">
-                    <option value="">⚽ Todas las posiciones</option>
-                  </select>
-                </div>
-              </div>
-              <div class="col-md-4">
-                <div class="filter-group">
-                  <label class="filter-label" for="filtro-color">
-                    <i class="fas fa-palette me-1"></i>Tipo de Carta
-                  </label>
-                  <select id="filtro-color" class="form-select filter-select">
-                    <option value="">🃏 Todas las cartas</option>
-                    <option value="azul">💎 Cartas Azules</option>
-                    <option value="morado">🔮 Cartas Moradas</option>
-                    <option value="negro">⚫ Cartas Classics</option>
-                  </select>
-                </div>
+        <div class="filters-section mt-3">
+          <div class="row g-3">
+            <div class="col-md-4">
+              <div class="filter-group">
+                <label class="filter-label" for="filtro-nacionalidad">
+                  <i class="fas fa-flag me-1"></i>Nacionalidad
+                </label>
+                <select id="filtro-nacionalidad" class="form-select filter-select">
+                  <option value="">🌍 Todas las nacionalidades</option>
+                </select>
               </div>
             </div>
-
-
+            <div class="col-md-4">
+              <div class="filter-group">
+                <label class="filter-label" for="filtro-posicion">
+                  <i class="fas fa-running me-1"></i>Posición
+                </label>
+                <select id="filtro-posicion" class="form-select filter-select">
+                  <option value="">⚽ Todas las posiciones</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="filter-group">
+                <label class="filter-label" for="filtro-color">
+                  <i class="fas fa-palette me-1"></i>Tipo de Carta
+                </label>
+                <select id="filtro-color" class="form-select filter-select">
+                  <option value="">🃏 Todas las cartas</option>
+                  <option value="azul">💎 Cartas Azules</option>
+                  <option value="morado">🔮 Cartas Moradas</option>
+                  <option value="negro">⚫ Cartas Classics</option>
+                </select>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -504,30 +569,31 @@
     <div class="main-container">
       <!-- Anuncio mejorado -->
       <div class="ad-container">
-        <script type="text/javascript">
-          atOptions = {
-            'key': '2abf984a66f4f1a82de3c599331bbc5a',
-            'format': 'iframe',
-            'height': 60,
-            'width': 468,
-            'params': {}
-          };
-        </script>
-        <script type="text/javascript"
-          src="//www.highperformanceformat.com/2abf984a66f4f1a82de3c599331bbc5a/invoke.js"></script>
+        <div class="ad-wrapper">
+          <script type="text/javascript">
+            atOptions = {
+              'key': '2abf984a66f4f1a82de3c599331bbc5a',
+              'format': 'iframe',
+              'height': 60,
+              'width': 468,
+              'params': {}
+            };
+          </script>
+          <script type="text/javascript"
+            src="//www.highperformanceformat.com/2abf984a66f4f1a82de3c599331bbc5a/invoke.js"></script>
+        </div>
       </div>
-
-      
       <!-- Contenedor de tarjetas mejorado -->
       <div id="jugadores-container" class="row g-4 mt-3"></div>
-
-      <!-- Loading spinner -->
-      <div id="loading-spinner" class="loading-spinner">
-        <div class="spinner"></div>
-        <p>Cargando jugadores...</p>
-      </div>
     </div>
   </div>
+
+
+
+
+
+
+
 
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
@@ -535,11 +601,11 @@
   <!-- Script adicional para mejorar la funcionalidad -->
   <script>
     // Mejorar la experiencia de búsqueda
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
       const searchInput = document.getElementById('search');
       const resultsCounter = document.getElementById('results-counter');
       const loadingSpinner = document.getElementById('loading-spinner');
-      
+
       // Efecto de typing en el placeholder
       const placeholders = [
         '🔍 Buscar tu jugador favorito...',
@@ -547,7 +613,7 @@
         '🌟 Descubre nuevas estrellas...',
         '🏆 Busca los mejores jugadores...'
       ];
-      
+
       let placeholderIndex = 0;
       setInterval(() => {
         placeholderIndex = (placeholderIndex + 1) % placeholders.length;
@@ -555,10 +621,10 @@
           searchInput.placeholder = placeholders[placeholderIndex];
         }
       }, 3000);
-      
+
       // Mejorar feedback visual
       if (searchInput) {
-        searchInput.addEventListener('input', function(e) {
+        searchInput.addEventListener('input', function (e) {
           if (e.target.value.length > 0) {
             e.target.style.borderColor = '#11998e';
             e.target.style.boxShadow = '0 0 15px rgba(17, 153, 142, 0.3)';
@@ -568,16 +634,16 @@
           }
         });
       }
-      
+
       // Función para actualizar contador
-      window.updateResultsCounter = function(count) {
+      window.updateResultsCounter = function (count) {
         if (resultsCounter) {
           resultsCounter.innerHTML = `<i class="fas fa-users me-2"></i>${count} jugadores encontrados`;
         }
       };
-      
+
       // Función para mostrar/ocultar loading
-      window.toggleLoading = function(show) {
+      window.toggleLoading = function (show) {
         if (loadingSpinner) {
           loadingSpinner.style.display = show ? 'block' : 'none';
         }
