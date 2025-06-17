@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DLS 25 INFO</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+        }
+        .hero-bg {
+            background: url('https://images.unsplash.com/photo-1529903543134-d2d0b68519e6') no-repeat center center;
+            background-size: cover;
+        }
+        .nav-menu.active {
+            transform: translateX(0);
+        }
+    </style>
+</head>
+<body class="bg-gray-100 font-sans">
+    <nav class="gradient-bg text-white shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4 flex items-center justify-between">
+            <a href="index.html" class="text-2xl font-bold flex items-center gap-2">
+                <i class="fas fa-futbol"></i> DLS 25 INFO
+            </a>
+            
+            <div class="hidden md:flex space-x-4">
+                <a href="https://www.youtube.com/@Droicer" class="hover:text-red-300 transition-colors" title="YouTube">
+                    <i class="fab fa-youtube"></i>
+                </a>
+                <a href="https://web.facebook.com/profile.php?id=100080494001083" class="hover:text-black transition-colors" title="TikTok">
+                    <i class="fab fa-tiktok"></i>
+                </a>
+                <a href="https://www.tiktok.com/@droiicer" class="hover:text-blue-200 transition-colors" title="Facebook">
+                    <i class="fab fa-facebook"></i>
+                </a>
+            </div>
+            
+            <button class="md:hidden text-2xl" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+
+        <div class="nav-menu hidden md:hidden bg-white text-black absolute top-16 left-0 w-full shadow-lg transform -translate-x-full transition-transform duration-300">
+            <div class="flex flex-col items-center py-4">
+                <a href="https://www.youtube.com/@Droicer" class="py-2 text-lg hover:text-blue-600">YouTube</a>
+                <a href="https://web.facebook.com/profile.php?id=100080494001083" class="py-2 text-lg hover:text-blue-600">TikTok</a>
+                <a href="https://www.tiktok.com/@droiicer" class="py-2 text-lg hover:text-blue-600">Facebook</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="hero-bg text-black py-20">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-5xl font-extrabold mb-4 animate-fade-in">DLS 25 INFO</h1>
+            <p class="text-lg md:text-xl mb-8">Base de datos completa de Dream League Soccer 2025</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto mb-12">
+                <a href="players.html" class="bg-white text-black p-6 rounded-lg shadow-lg hover:bg-blue-100 transition-colors flex items-center justify-between">
+                    <div class="flex items-center gap-3">
+                        <i class="fas fa-running text-2xl"></i>
+                        <span class="font-semibold text-lg">JUGADORES</span>
+                    </div>
+                    <span class="bg-blue-600 text-white px-3 py-1 rounded-full">+12,400</span>
+                </a>
+                
+                <a href="teams.html" class="bg-white text-black p-6 rounded-lg shadow-lg hover:bg-blue-100 transition-colors flex items-center justify-between">
+                    <div class="flex items-center gap-3">
+                        <i class="fas fa-shield-alt text-2xl"></i>
+                        <span class="font-semibold text-lg">EQUIPOS</span>
+                    </div>
+                    <span class="bg-blue-600 text-white px-3 py-1 rounded-full">249</span>
+                </a>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl mx-auto">
+                <div class="bg-white text-black p-6 rounded-lg shadow-lg">
+                    <div class="text-3xl font-bold text-blue-600">12,400+</div>
+                    <div class="text-gray-600">Jugadores</div>
+                </div>
+                <div class="bg-white text-black p-6 rounded-lg shadow-lg">
+                    <div class="text-3xl font-bold text-blue-600">249</div>
+                    <div class="text-gray-600">Equipos</div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        function toggleMenu() {
+            const navMenu = document.querySelector('.nav-menu');
+            navMenu.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

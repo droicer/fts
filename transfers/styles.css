@@ -1,0 +1,51 @@
+.player-card {
+    border-radius: 16px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4), 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    backdrop-filter: none;
+    margin-bottom: 2rem;
+}
+
+.player-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.stat-circle-container {
+    width: 60px;
+    height: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.stat-circle-bg {
+    fill: none;
+    stroke: rgba(255, 255, 255, 0.2);
+    stroke-width: 6;
+}
+
+.stat-circle-progress {
+    fill: none;
+    stroke-linecap: round;
+    stroke-width: 6;
+    transform: rotate(-90deg);
+    transform-origin: center;
+    transition: stroke-dasharray 0.5s ease;
+}
+
+.stat-circle-text {
+    font-size: 14px;
+    font-weight: 700;
+    fill: currentColor;
+}
+
+.stat-circle-label {
+    font-size: 10px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+}

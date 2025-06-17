@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Jugadores DLS25</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.8.0/sql-wasm.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Adsterra Popunder/Social Bar -->
+  <script type='text/javascript' src='//pl17958015.profitableratecpm.com/95/b8/c0/95b8c051d3f8200853584c0c7c9f185c.js'></script>
+</head>
+<body class="bg-gray-900 text-white">
+  <!-- Navbar -->
+  <nav class="fixed top-0 left-0 right-0 bg-gray-800 p-4 z-20 shadow-lg">
+    <div class="container mx-auto flex justify-between items-center">
+      <a href="#" class="navbar-brand text-2xl font-extrabold tracking-tight">
+        ⚽ JUGADORES DLS25 
+        <span class="text-gray-400 text-sm">4/06/2025</span> BY 
+        <span id="droicer" class="cursor-pointer text-pink-500 underline hover:text-pink-400 transition-colors">DROICER</span>
+      </a>
+    </div>
+  </nav>
+
+  <!-- Filtros -->
+  <div class="sticky top-16 bg-gray-900 p-4 border-b border-gray-700 z-0">
+    <div class="container mx-auto flex items-center gap-4 flex-wrap">
+      <input id="search" type="text" placeholder="Buscar jugador..." 
+        class="flex-1 p-2 rounded-lg bg-gray-700 text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-pink-500 transition-all">
+      
+      <!-- Botón hamburguesa -->
+      <button id="filter-toggle" class="md:hidden p-2 rounded-lg bg-gray-700 hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-pink-500 transition-colors">
+        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+        </svg>
+      </button>
+
+      <!-- Menú de filtros -->
+      <div id="filter-menu" class="hidden flex-col gap-4 mt-4 md:mt-0 w-full md:flex md:flex-row md:w-auto transition-all duration-300 ease-in-out">
+        <select id="filtro-nacionalidad" class="p-2 rounded-lg bg-gray-700 text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-pink-500 transition-all">
+          <option value="">Todas las nacionalidades</option>
+        </select>
+        <select id="filtro-posicion" class="p-2 rounded-lg bg-gray-700 text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-pink-500 transition-all">
+          <option value="">Todas las posiciones</option>
+        </select>
+        <select id="filtro-color" class="p-2 rounded-lg bg-gray-700 text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-pink-500 transition-all">
+          <option value="">Todos los colores</option>
+          <option value="azul">Azul</option>
+          <option value="morado">Morado</option>
+          <option value="negro">Negro</option>
+        </select>
+      </div>
+    </div>
+    <!-- Adsterra Banner 468x60 -->
+    <div class="ad-banner mx-auto mt-4 mb-6 text-center">
+      <script type="text/javascript">
+        atOptions = {
+          'key' : '2abf984a66f4f1a82de3c599331bbc5a',
+          'format' : 'iframe',
+          'height' : 60,
+          'width' : 468,
+          'params' : {}
+        };
+      </script>
+      <script type="text/javascript" src="//www.highperformanceformat.com/2abf984a66f4f1a82de3c599331bbc5a/invoke.js"></script>
+    </div>
+  </div>
+
+  <!-- Contenedor de jugadores -->
+  <div class="container mx-auto p-4 pt-24">
+    <!-- Adsterra Banner 300x250 -->
+    <div class="ad-banner mx-auto mb-6 text-center">
+      <script type="text/javascript">
+        atOptions = {
+          'key' : 'cbd9ef30449d8227da9037afae90d670',
+          'format' : 'iframe',
+          'height' : 250,
+          'width' : 300,
+          'params' : {}
+        };
+      </script>
+      <script type="text/javascript" src="//www.highperformanceformat.com/cbd9ef30449d8227da9037afae90d670/invoke.js"></script>
+    </div>
+    <div id="jugadores-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+  </div>
+
+  <script src="app_players.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.8.0/sql-wasm.js"></script>
+  <script src="https://unpkg.com/@zip.js/zip.js@2.7.57/dist/zip.min.js"></script>
+  <script>
+    document.getElementById('filter-toggle').addEventListener('click', () => {
+      const filterMenu = document.getElementById('filter-menu');
+      filterMenu.classList.toggle('hidden');
+      filterMenu.classList.toggle('flex');
+    });
+  </script>
+</body>
+</html>
