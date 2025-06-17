@@ -1,99 +1,655 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Jugadores DLS25</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.8.0/sql-wasm.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
-  <link rel="stylesheet" href="styles.css" />
-  <!-- Adsterra Popunder/Social Bar -->
-  <script type='text/javascript' src='//pl17958015.profitableratecpm.com/95/b8/c0/95b8c051d3f8200853584c0c7c9f185c.js'></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mercado de Traspasos DLS</title>
+  <link rel="icon" type="image/png" href="favicon.png" />
+
+  <!-- Bootstrap y FontAwesome -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <!-- Librerías necesarias -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.8.0/sql-wasm.js"></script>
+  <script src="https://unpkg.com/@zip.js/zip.js@2.7.57/dist/zip.min.js"></script>
+
+  <!-- Estilos personalizados -->
+  <style>
+    :root {
+      --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+      --success-gradient: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+      --dark-gradient: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+      --glass-bg: rgba(255, 255, 255, 0.1);
+      --glass-border: rgba(255, 255, 255, 0.2);
+      --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      --hover-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: var(--primary-gradient);
+      min-height: 100vh;
+      font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* Efectos de fondo animados */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background:
+        radial-gradient(circle at 20% 50%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.3) 0%, transparent 50%),
+        radial-gradient(circle at 40% 80%, rgba(120, 219, 255, 0.3) 0%, transparent 50%);
+      animation: gradientShift 15s ease-in-out infinite;
+      z-index: -1;
+    }
+
+    @keyframes gradientShift {
+
+      0%,
+      100% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 0.8;
+      }
+    }
+
+    /* Navbar mejorada */
+    .navbar-custom {
+      background: var(--glass-bg);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--glass-border);
+      box-shadow: var(--card-shadow);
+      transition: all 0.3s ease;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1030;
+    }
+
+    .navbar-custom::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: var(--secondary-gradient);
+    }
+
+    .navbar-brand {
+      font-weight: 800;
+      font-size: 1.6rem;
+      background: linear-gradient(45deg, #fff, #e8e8e8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .navbar-brand:hover {
+      transform: scale(1.05);
+      filter: brightness(1.2);
+    }
+
+    .navbar-brand::after {
+      content: '✨';
+      position: absolute;
+      right: -25px;
+      top: 50%;
+      transform: translateY(-50%);
+      animation: sparkle 2s ease-in-out infinite;
+    }
+
+    @keyframes sparkle {
+
+      0%,
+      100% {
+        opacity: 0.5;
+        transform: translateY(-50%) scale(1);
+      }
+
+      50% {
+        opacity: 1;
+        transform: translateY(-50%) scale(1.2);
+      }
+    }
+
+    /* Contenedor de búsqueda mejorado */
+    .search-container {
+      background: var(--glass-bg);
+      backdrop-filter: blur(15px);
+      border-radius: 25px;
+      padding: 2rem;
+      margin: 1.5rem 0;
+      border: 1px solid var(--glass-border);
+      box-shadow: var(--card-shadow);
+      animation: slideDown 0.6s ease-out;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .search-container::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: conic-gradient(from 0deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+      animation: rotate 10s linear infinite;
+      z-index: -1;
+    }
+
+    @keyframes rotate {
+      from {
+        transform: rotate(0deg);
+      }
+
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes slideDown {
+      from {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Input de búsqueda mejorado */
+    .search-input-group {
+      position: relative;
+      margin-bottom: 1.5rem;
+    }
+
+    .search-input {
+      background: rgba(255, 255, 255, 0.95);
+      border: 2px solid transparent;
+      border-radius: 20px;
+      padding: 18px 25px;
+      font-size: 1.1rem;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .search-input:focus {
+      border-color: #667eea;
+      box-shadow: 0 0 25px rgba(102, 126, 234, 0.3);
+      background: rgba(255, 255, 255, 1);
+      transform: translateY(-2px);
+    }
+
+    .search-btn {
+      background: var(--success-gradient);
+      border: none;
+      border-radius: 0 20px 20px 0;
+      padding: 18px 30px;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(17, 153, 142, 0.3);
+    }
+
+    .search-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(17, 153, 142, 0.4);
+    }
+
+    .search-btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+      transition: left 0.5s;
+    }
+
+    .search-btn:hover::before {
+      left: 100%;
+    }
+
+    /* Filtros mejorados */
+    .filters-section {
+      margin-top: 1.5rem;
+    }
+
+    .filter-group {
+      margin-bottom: 1rem;
+    }
+
+    .filter-label {
+      color: white;
+      font-weight: 700;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+      display: block;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .filter-select {
+      background: rgba(255, 255, 255, 0.95);
+      border: 2px solid transparent;
+      border-radius: 15px;
+      padding: 14px 18px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+    }
+
+    .filter-select:focus {
+      border-color: #667eea;
+      box-shadow: 0 0 20px rgba(102, 126, 234, 0.3);
+      background: rgba(255, 255, 255, 1);
+      transform: translateY(-2px);
+    }
+
+
+
+    /* Botón toggle mejorado */
+    .toggle-btn {
+      background: var(--glass-bg);
+      border: 2px solid var(--glass-border);
+      border-radius: 15px;
+      padding: 10px 15px;
+      transition: all 0.3s ease;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      font-size: 0.9rem;
+    }
+
+    .toggle-btn:hover {
+      background: rgba(255, 255, 255, 0.2);
+      transform: scale(1.05);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    }
+
+    .toggle-btn:focus {
+      box-shadow: 0 0 20px rgba(102, 126, 234, 0.4);
+    }
+
+    /* Asegurar que el botón toggle sea consistente en todas las pantallas */
+    .toggle-btn i {
+      font-size: 1.2rem;
+    }
+
+    /* Transición suave para el colapso */
+    #busquedaFiltros {
+      transition: height 0.3s ease;
+    }
+
+    /* Contenedor principal mejorado */
+    .main-container {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      border-radius: 30px;
+      padding: 2rem;
+      margin: 2rem auto;
+      border: 1px solid var(--glass-border);
+      box-shadow: var(--card-shadow);
+      animation: fadeInUp 0.8s ease-out;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Anuncio mejorado */
+    .ad-container {
+      background: var(--glass-bg);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 1.5rem;
+      margin: 2rem 0;
+      border: 1px solid var(--glass-border);
+      text-align: center;
+      box-shadow: var(--card-shadow);
+      transition: all 0.3s ease;
+    }
+
+    .ad-container:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--hover-shadow);
+    }
+
+    /* Contador de resultados */
+    .results-counter {
+      background: var(--secondary-gradient);
+      color: white;
+      padding: 12px 24px;
+      border-radius: 25px;
+      font-weight: 700;
+      font-size: 1rem;
+      display: inline-block;
+      margin: 1rem 0;
+      box-shadow: 0 5px 15px rgba(240, 147, 251, 0.3);
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.05);
+      }
+
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    /* Loading spinner */
+    .loading-spinner {
+      display: none;
+      text-align: center;
+      padding: 3rem;
+    }
+
+    .spinner {
+      width: 60px;
+      height: 60px;
+      border: 4px solid rgba(255, 255, 255, 0.3);
+      border-top: 4px solid #667eea;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin: 0 auto 1rem;
+    }
+
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    /* Responsive improvements */
+    @media (max-width: 768px) {
+      .navbar-brand {
+        font-size: 1.2rem;
+      }
+
+      .search-container {
+        padding: 1.5rem;
+        margin: 1rem 0;
+      }
+
+      .main-container {
+        padding: 1.5rem;
+        margin: 1rem;
+        border-radius: 20px;
+      }
+
+      .search-input {
+        padding: 15px 20px;
+        font-size: 1rem;
+      }
+
+      .search-btn {
+        padding: 15px 25px;
+      }
+
+      /* Ajustar padding del contenido principal en móviles */
+      .container[style*="padding-top"] {
+        padding-top: 80px !important;
+      }
+
+      .ad-container {
+        display: flex;
+        justify-content: center;
+        /* Centra el anuncio horizontalmente */
+        width: 100%;
+      }
+
+      .ad-wrapper {
+        width: 100%;
+        max-width: 468px;
+        /* Ancho máximo del anuncio */
+        overflow: hidden;
+        /* Evita que el contenido se desborde */
+      }
+
+      .ad-wrapper iframe {
+        width: 100% !important;
+        /* Forzar el ancho al 100% del contenedor */
+        height: auto;
+        /* Permitir que la altura se ajuste */
+        aspect-ratio: 468 / 60;
+        /* Mantener la proporción original del anuncio */
+        display: block;
+        /* Evitar espacios no deseados */
+      }
+
+      /* Media query para pantallas pequeñas */
+      @media (max-width: 500px) {
+        .ad-wrapper {
+          max-width: 100%;
+          /* Ajustar al ancho completo en pantallas pequeñas */
+        }
+      }
+    }
+
+    /* Mejoras de accesibilidad */
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    /* Focus indicators mejorados */
+    *:focus {
+      outline: 2px solid #667eea;
+      outline-offset: 2px;
+    }
+  </style>
+
+  <!-- Scripts personalizados -->
+  <script defer src="app_players.js"></script>
+
+  <!-- Anuncio -->
+  <script type='text/javascript'
+    src='//pl17958015.effectiveratecpm.com/95/b8/c0/95b8c051d3f8200853584c0c7c9f185c.js'></script>
 </head>
-<body class="bg-gray-900 text-white">
-  <!-- Navbar -->
-  <nav class="fixed top-0 left-0 right-0 bg-gray-800 p-4 z-20 shadow-lg">
-    <div class="container mx-auto flex justify-between items-center">
-      <a href="#" class="navbar-brand text-2xl font-extrabold tracking-tight">
-        ⚽ JUGADORES DLS25 
-        <span class="text-gray-400 text-sm">4/06/2025</span> BY 
-        <span id="droicer" class="cursor-pointer text-pink-500 underline hover:text-pink-400 transition-colors">DROICER</span>
-      </a>
+
+<body>
+  <nav class="navbar navbar-custom">
+    <div class="container d-flex justify-content-between align-items-center py-2">
+      <span class="navbar-brand mb-0 h1">⚽ JUGADORES DLS25 BY DROICER</span>
+      <button class="btn toggle-btn" type="button" data-bs-toggle="collapse" data-bs-target="#busquedaFiltros"
+        aria-controls="busquedaFiltros" aria-expanded="false" aria-label="Mostrar/Ocultar filtros">
+        <i class="fas fa-sliders-h"></i>
+        <span class="ms-2 d-none d-sm-inline">Filtros</span>
+      </button>
+    </div>
+
+ <div class="container py-2">
+  <div class="search-input-group">
+    <div class="form-group">
+      <input type="text" id="search" class="form-control search-input"
+        placeholder="🔍 Buscar tu jugador favorito..." aria-label="Buscar jugador" autocomplete="off" />
+    </div>
+  </div>
+</div>
+
+    <!-- FILTROS OCULTOS HASTA QUE SE ABRAN -->
+    <div class="container">
+      <div class="collapse" id="busquedaFiltros">
+        <div class="filters-section mt-3">
+          <div class="row g-3">
+            <div class="col-md-4">
+              <div class="filter-group">
+                <label class="filter-label" for="filtro-nacionalidad">
+                  <i class="fas fa-flag me-1"></i>Nacionalidad
+                </label>
+                <select id="filtro-nacionalidad" class="form-select filter-select">
+                  <option value="">🌍 Todas las nacionalidades</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="filter-group">
+                <label class="filter-label" for="filtro-posicion">
+                  <i class="fas fa-running me-1"></i>Posición
+                </label>
+                <select id="filtro-posicion" class="form-select filter-select">
+                  <option value="">⚽ Todas las posiciones</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="filter-group">
+                <label class="filter-label" for="filtro-color">
+                  <i class="fas fa-palette me-1"></i>Tipo de Carta
+                </label>
+                <select id="filtro-color" class="form-select filter-select">
+                  <option value="">🃏 Todas las cartas</option>
+                  <option value="azul">💎 Cartas Azules</option>
+                  <option value="morado">🔮 Cartas Moradas</option>
+                  <option value="negro">⚫ Cartas Classics</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </nav>
 
-  <!-- Filtros -->
-  <div class="sticky top-16 bg-gray-900 p-4 border-b border-gray-700 z-0">
-    <div class="container mx-auto flex items-center gap-4 flex-wrap">
-      <input id="search" type="text" placeholder="Buscar jugador..." 
-        class="flex-1 p-2 rounded-lg bg-gray-700 text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-pink-500 transition-all">
-      
-      <!-- Botón hamburguesa -->
-      <button id="filter-toggle" class="md:hidden p-2 rounded-lg bg-gray-700 hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-pink-500 transition-colors">
-        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-        </svg>
-      </button>
-
-      <!-- Menú de filtros -->
-      <div id="filter-menu" class="hidden flex-col gap-4 mt-4 md:mt-0 w-full md:flex md:flex-row md:w-auto transition-all duration-300 ease-in-out">
-        <select id="filtro-nacionalidad" class="p-2 rounded-lg bg-gray-700 text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-pink-500 transition-all">
-          <option value="">Todas las nacionalidades</option>
-        </select>
-        <select id="filtro-posicion" class="p-2 rounded-lg bg-gray-700 text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-pink-500 transition-all">
-          <option value="">Todas las posiciones</option>
-        </select>
-        <select id="filtro-color" class="p-2 rounded-lg bg-gray-700 text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-pink-500 transition-all">
-          <option value="">Todos los colores</option>
-          <option value="azul">Azul</option>
-          <option value="morado">Morado</option>
-          <option value="negro">Negro</option>
-        </select>
+  <!-- CONTENIDO PRINCIPAL MEJORADO -->
+  <div class="container" style="padding-top: 100px;">
+    <div class="main-container">
+      <!-- Anuncio mejorado -->
+      <div class="ad-container">
+        <div class="ad-wrapper">
+          <script type="text/javascript">
+            atOptions = {
+              'key': '2abf984a66f4f1a82de3c599331bbc5a',
+              'format': 'iframe',
+              'height': 60,
+              'width': 468,
+              'params': {}
+            };
+          </script>
+          <script type="text/javascript"
+            src="//www.highperformanceformat.com/2abf984a66f4f1a82de3c599331bbc5a/invoke.js"></script>
+        </div>
       </div>
-    </div>
-    <!-- Adsterra Banner 468x60 -->
-    <div class="ad-banner mx-auto mt-4 mb-6 text-center">
-      <script type="text/javascript">
-        atOptions = {
-          'key' : '2abf984a66f4f1a82de3c599331bbc5a',
-          'format' : 'iframe',
-          'height' : 60,
-          'width' : 468,
-          'params' : {}
-        };
-      </script>
-      <script type="text/javascript" src="//www.highperformanceformat.com/2abf984a66f4f1a82de3c599331bbc5a/invoke.js"></script>
+      <!-- Contenedor de tarjetas mejorado -->
+      <div id="jugadores-container" class="row g-4 mt-3"></div>
     </div>
   </div>
 
-  <!-- Contenedor de jugadores -->
-  <div class="container mx-auto p-4 pt-24">
-    <!-- Adsterra Banner 300x250 -->
-    <div class="ad-banner mx-auto mb-6 text-center">
-      <script type="text/javascript">
-        atOptions = {
-          'key' : 'cbd9ef30449d8227da9037afae90d670',
-          'format' : 'iframe',
-          'height' : 250,
-          'width' : 300,
-          'params' : {}
-        };
-      </script>
-      <script type="text/javascript" src="//www.highperformanceformat.com/cbd9ef30449d8227da9037afae90d670/invoke.js"></script>
-    </div>
-    <div id="jugadores-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
-  </div>
 
-  <script src="app_players.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.8.0/sql-wasm.js"></script>
-  <script src="https://unpkg.com/@zip.js/zip.js@2.7.57/dist/zip.min.js"></script>
+
+
+
+
+
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Script adicional para mejorar la funcionalidad -->
   <script>
-    document.getElementById('filter-toggle').addEventListener('click', () => {
-      const filterMenu = document.getElementById('filter-menu');
-      filterMenu.classList.toggle('hidden');
-      filterMenu.classList.toggle('flex');
+    // Mejorar la experiencia de búsqueda
+    document.addEventListener('DOMContentLoaded', function () {
+      const searchInput = document.getElementById('search');
+      const resultsCounter = document.getElementById('results-counter');
+      const loadingSpinner = document.getElementById('loading-spinner');
+
+      // Efecto de typing en el placeholder
+      const placeholders = [
+        '🔍 Buscar tu jugador favorito...',
+        '⚽ Encuentra a Messi...',
+        '🌟 Descubre nuevas estrellas...',
+        '🏆 Busca los mejores jugadores...'
+      ];
+
+      let placeholderIndex = 0;
+      setInterval(() => {
+        placeholderIndex = (placeholderIndex + 1) % placeholders.length;
+        if (searchInput && !searchInput.value) {
+          searchInput.placeholder = placeholders[placeholderIndex];
+        }
+      }, 3000);
+
+      // Mejorar feedback visual
+      if (searchInput) {
+        searchInput.addEventListener('input', function (e) {
+          if (e.target.value.length > 0) {
+            e.target.style.borderColor = '#11998e';
+            e.target.style.boxShadow = '0 0 15px rgba(17, 153, 142, 0.3)';
+          } else {
+            e.target.style.borderColor = 'transparent';
+            e.target.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.1)';
+          }
+        });
+      }
+
+      // Función para actualizar contador
+      window.updateResultsCounter = function (count) {
+        if (resultsCounter) {
+          resultsCounter.innerHTML = `<i class="fas fa-users me-2"></i>${count} jugadores encontrados`;
+        }
+      };
+
+      // Función para mostrar/ocultar loading
+      window.toggleLoading = function (show) {
+        if (loadingSpinner) {
+          loadingSpinner.style.display = show ? 'block' : 'none';
+        }
+      };
     });
   </script>
 </body>
+
 </html>
