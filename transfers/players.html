@@ -59,15 +59,8 @@
     }
 
     @keyframes gradientShift {
-
-      0%,
-      100% {
-        opacity: 1;
-      }
-
-      50% {
-        opacity: 0.8;
-      }
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.8; }
     }
 
     /* Navbar mejorada */
@@ -121,17 +114,8 @@
     }
 
     @keyframes sparkle {
-
-      0%,
-      100% {
-        opacity: 0.5;
-        transform: translateY(-50%) scale(1);
-      }
-
-      50% {
-        opacity: 1;
-        transform: translateY(-50%) scale(1.2);
-      }
+      0%, 100% { opacity: 0.5; transform: translateY(-50%) scale(1); }
+      50% { opacity: 1; transform: translateY(-50%) scale(1.2); }
     }
 
     /* Contenedor de búsqueda mejorado */
@@ -161,25 +145,13 @@
     }
 
     @keyframes rotate {
-      from {
-        transform: rotate(0deg);
-      }
-
-      to {
-        transform: rotate(360deg);
-      }
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
     }
 
     @keyframes slideDown {
-      from {
-        opacity: 0;
-        transform: translateY(-30px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     /* Input de búsqueda mejorado */
@@ -275,8 +247,6 @@
       transform: translateY(-2px);
     }
 
-
-
     /* Botón toggle mejorado */
     .toggle-btn {
       background: var(--glass-bg);
@@ -299,7 +269,6 @@
       box-shadow: 0 0 20px rgba(102, 126, 234, 0.4);
     }
 
-    /* Asegurar que el botón toggle sea consistente en todas las pantallas */
     .toggle-btn i {
       font-size: 1.2rem;
     }
@@ -322,15 +291,8 @@
     }
 
     @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     /* Anuncio mejorado */
@@ -366,17 +328,9 @@
     }
 
     @keyframes pulse {
-      0% {
-        transform: scale(1);
-      }
-
-      50% {
-        transform: scale(1.05);
-      }
-
-      100% {
-        transform: scale(1);
-      }
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
     }
 
     /* Loading spinner */
@@ -397,79 +351,25 @@
     }
 
     @keyframes spin {
-      0% {
-        transform: rotate(0deg);
-      }
-
-      100% {
-        transform: rotate(360deg);
-      }
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
     }
 
     /* Responsive improvements */
     @media (max-width: 768px) {
-      .navbar-brand {
-        font-size: 1.2rem;
-      }
+      .navbar-brand { font-size: 1.2rem; }
+      .search-container { padding: 1.5rem; margin: 1rem 0; }
+      .main-container { padding: 1.5rem; margin: 1rem; border-radius: 20px; }
+      .search-input { padding: 15px 20px; font-size: 1rem; }
+      .search-btn { padding: 15px 25px; }
+      .container[style*="padding-top"] { padding-top: 80px !important; }
+      .ad-container { display: flex; justify-content: center; width: 100%; }
+      .ad-wrapper { width: 100%; max-width: 468px; overflow: hidden; }
+      .ad-wrapper iframe { width: 100% !important; height: auto; aspect-ratio: 468 / 60; display: block; }
+    }
 
-      .search-container {
-        padding: 1.5rem;
-        margin: 1rem 0;
-      }
-
-      .main-container {
-        padding: 1.5rem;
-        margin: 1rem;
-        border-radius: 20px;
-      }
-
-      .search-input {
-        padding: 15px 20px;
-        font-size: 1rem;
-      }
-
-      .search-btn {
-        padding: 15px 25px;
-      }
-
-      /* Ajustar padding del contenido principal en móviles */
-      .container[style*="padding-top"] {
-        padding-top: 80px !important;
-      }
-
-      .ad-container {
-        display: flex;
-        justify-content: center;
-        /* Centra el anuncio horizontalmente */
-        width: 100%;
-      }
-
-      .ad-wrapper {
-        width: 100%;
-        max-width: 468px;
-        /* Ancho máximo del anuncio */
-        overflow: hidden;
-        /* Evita que el contenido se desborde */
-      }
-
-      .ad-wrapper iframe {
-        width: 100% !important;
-        /* Forzar el ancho al 100% del contenedor */
-        height: auto;
-        /* Permitir que la altura se ajuste */
-        aspect-ratio: 468 / 60;
-        /* Mantener la proporción original del anuncio */
-        display: block;
-        /* Evitar espacios no deseados */
-      }
-
-      /* Media query para pantallas pequeñas */
-      @media (max-width: 500px) {
-        .ad-wrapper {
-          max-width: 100%;
-          /* Ajustar al ancho completo en pantallas pequeñas */
-        }
-      }
+    @media (max-width: 500px) {
+      .ad-wrapper { max-width: 100%; }
     }
 
     /* Mejoras de accesibilidad */
@@ -485,7 +385,6 @@
       border: 0;
     }
 
-    /* Focus indicators mejorados */
     *:focus {
       outline: 2px solid #667eea;
       outline-offset: 2px;
@@ -496,8 +395,7 @@
   <script defer src="app_players.js"></script>
 
   <!-- Anuncio -->
-  <script type='text/javascript'
-    src='//pl17958015.effectiveratecpm.com/95/b8/c0/95b8c051d3f8200853584c0c7c9f185c.js'></script>
+  <script type='text/javascript' src='//rowaskewoblong.com/95/b8/c0/95b8c051d3f8200853584c0c7c9f185c.js'></script>
 </head>
 
 <body>
@@ -511,21 +409,21 @@
       </button>
     </div>
 
- <div class="container py-2">
-  <div class="search-input-group">
-    <div class="form-group">
-      <input type="text" id="search" class="form-control search-input"
-        placeholder="🔍 Buscar tu jugador favorito..." aria-label="Buscar jugador" autocomplete="off" />
+    <div class="container py-2">
+      <div class="search-input-group">
+        <div class="form-group">
+          <input type="text" id="search" class="form-control search-input"
+            placeholder="🔍 Buscar tu jugador favorito..." aria-label="Buscar jugador" autocomplete="off" />
+        </div>
+      </div>
     </div>
-  </div>
-</div>
 
     <!-- FILTROS OCULTOS HASTA QUE SE ABRAN -->
     <div class="container">
       <div class="collapse" id="busquedaFiltros">
         <div class="filters-section mt-3">
           <div class="row g-3">
-            <div class="col-md-4">
+            <div class="col-md-3">
               <div class="filter-group">
                 <label class="filter-label" for="filtro-nacionalidad">
                   <i class="fas fa-flag me-1"></i>Nacionalidad
@@ -535,7 +433,7 @@
                 </select>
               </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-3">
               <div class="filter-group">
                 <label class="filter-label" for="filtro-posicion">
                   <i class="fas fa-running me-1"></i>Posición
@@ -545,7 +443,7 @@
                 </select>
               </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-3">
               <div class="filter-group">
                 <label class="filter-label" for="filtro-color">
                   <i class="fas fa-palette me-1"></i>Tipo de Carta
@@ -555,6 +453,17 @@
                   <option value="azul">💎 Cartas Azules</option>
                   <option value="morado">🔮 Cartas Moradas</option>
                   <option value="negro">⚫ Cartas Classics</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="filter-group">
+                <label class="filter-label" for="base-datos">
+                  <i class="fas fa-database me-1"></i>Año
+                </label>
+                <select id="base-datos" class="form-select filter-select">
+                  <option value="app25.dzp" selected>DLS25</option>
+                  <option value="app23.dzp">DLS23</option>
                 </select>
               </div>
             </div>
@@ -579,21 +488,13 @@
               'params': {}
             };
           </script>
-          <script type="text/javascript"
-            src="//www.highperformanceformat.com/2abf984a66f4f1a82de3c599331bbc5a/invoke.js"></script>
+          <script type="text/javascript" src="//rowaskewoblong.com/2abf984a66f4f1a82de3c599331bbc5a/invoke.js"></script>
         </div>
       </div>
       <!-- Contenedor de tarjetas mejorado -->
       <div id="jugadores-container" class="row g-4 mt-3"></div>
     </div>
   </div>
-
-
-
-
-
-
-
 
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
